@@ -22,3 +22,15 @@ item_id = {
 
     "is_substance": False
 }
+
+item_mobile = {
+    "id": "mobile",
+    
+    "name": "mobile phone",
+    
+    "description": "mobile phone will be useful even you are not sure whom it belongs to",
+    
+    "is_alcohol": False,
+    
+    "is_substance": False
+}
