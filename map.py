@@ -1,81 +1,61 @@
 from items import *
 
-room_reception = {
-    "name": "Reception",
+room_unihalls = {
+    "name": "Uni Halls",
 
-    "description":
-    """You are in a maze of twisty little passages, all alike.
-Next to you is the School of Computer Science and
-Informatics reception. The receptionist, Matt Strangis,
-seems to be playing an old school text-based adventure
-game on his computer. There are corridors leading to the
-south and east. The exit is to the west.""",
+##    "description": someone needs to write description,
 
-    "exits": {"south": "Admins", "east": "Tutor", "west": "Parking"},
-
-    "items": [item_biscuits, item_handbook]
-}
-
-room_admins = {
-    "name": "MJ and Simon's room",
-
-    "description":
-    """You are leaning agains the door of the systems managers'
-room. Inside you notice Matt "MJ" John and Simon Jones. They
-ignore you. To the north is the reception.""",
-
-    "exits":  {"north": "Reception"},
+    "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friend Room", "cost": "0"}, "North": {"name": "Your Room", "cost": "0"}},
 
     "items": []
 }
 
-room_tutor = {
-    "name": "your personal tutor's office",
+room_yourroom = {
+    "name": "Your room",
 
-    "description":
-    """You are in your personal tutor's office. He intently
-stares at his huge monitor, ignoring you completely.
-On the desk you notice a cup of coffee and an empty
-pack of biscuits. The reception is to the west.""",
+##    "description": someone needs to write description,
 
-    "exits": {"west": "Reception"},
+    "exits": {"south": {"name": "Uni Halls", "cost": "0"}},
 
     "items": []
 }
 
-room_parking = {
-    "name": "the parking lot",
+room_fridge = {
+    "name": "Fridge",
 
-    "description":
-    """You are standing in the Queen's Buildings parking lot.
-You can go south to the COMSC reception, or east to the
-general office.""",
+##   "description": someone needs to write description,
 
-    "exits": {"east": "Office", "south": "Reception"},
+    "exits": {"west": {"name": "Uni Halls", "cost": "0"}},
 
-    "items": []
+    "items": [beer]
 }
 
-room_office = {
-    "name": "the general office",
+room_tygwynroad = {
+    "name": "Ty-Gwyn road",
 
-    "description":
-    """You are standing next to the cashier's till at
-30-36 Newport Road. The cashier looks at you with hope
-in their eyes. If you go west you can return to the
-Queen's Buildings.""",
+##    "description": someone needs to write description,
 
-    "exits": {"west": "Parking"},
+    "exits": {"south": {"name": "Tal-y-Bont North", "cost": "10"}, "north": {"name": "Uni Halls", "cost": "0"}}
 
-    "items": [item_pen]
+    "items" = []
 }
 
+room_friendsroom = {
+    "name": "Friends Room",
 
+##   "description": someone needs to add a description,
+
+    "exits": {"east": {"name": "Uni Halls", "cost": "0"}},
+
+    "items": [money]
+
+}    
 
 rooms = {
-    "Reception": room_reception,
-    "Admins": room_admins,
-    "Tutor": room_tutor,
-    "Parking": room_parking,
-    "Office": room_office
+    "Uni Halls": room_unihalls,
+    "Your Room": room_yourroom,
+    "Fridge": room_fridge,
+    "Ty-Gywn road": room_tygwynroad,
+    "Friends Room": room_friendsroom,
+
 }
