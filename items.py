@@ -3,7 +3,7 @@ item_money = {
 
     "name": "money",
 
-    "description": "a new crisp plastic note",
+    "description": "a new crisp, plastic note",
 
     "is_alcohol": False,
 
@@ -33,4 +33,28 @@ item_mobile = {
     "is_alcohol": False,
     
     "is_substance": False
+}
+
+item_beer = {
+    "id": "beer",
+
+    "name": "a bottle of beer",
+
+    "description": "an ice cold refreshing Tesco everday value beer.",
+    
+    "is_alcohol": True
+
+    "is_substance": False
+}
+
+item_vodka = {
+    "id": "vodka",
+
+    "name": "a shot of vodka",
+
+##    "description": ,
+    
+    "is_alcohol": True
+
+    "is_substance": False
 }
