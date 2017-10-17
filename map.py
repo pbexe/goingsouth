@@ -67,7 +67,7 @@ room_corridor = {
 
 ##  "description": someone needs to write a description,
 
-    "exits": {"east": {"name": "Pres", "cost": "0"}},
+    "exits": {"east": {"name": "Pres", "cost": "0"}, "south": {"name": "Pres Host Room", "cost": "0"}},
 
     "items": []
 
@@ -85,17 +85,55 @@ room_preshostroom = {
 
 }
 
-room_corridor = {
-    "name" = "Corridor",
+room_northroad = {
+    "name": "North Road",
 
 ##  "description": someone needs to add a description,
 
-    "exits": {"west": {"name": "Pres", "cost": "0"},
+    "exits": {"east": {"name": "Fattoush Restaurant", "cost": "0"}, "south": {"name": "Park Place", "cost": "0"}, "north": {"name": "Pres", "cost": "0"},
 
     "items": []
-              
 }
 
+room_fattoush = {
+    "name": "Fattoush Restaurant",
+
+##  "description": someone needs to add a description,
+
+    "exits": {"west": {"name": "North Road", "cost": "0"}},
+
+    "items": []
+}
+
+room_parkplace = {
+    "name": "Park Place",
+
+##  "description": someone needs to add a description,
+
+    "exits": {"North": {"name": "North Road", "cost": "0"}, "west": {"name": "Cathays Park", "cost": "0"}, "south": {"name": "Pryzm", "cost": "0"}},
+
+    "items": []
+}
+
+room_cathayspark = {
+    "name": "Cathays Park",
+
+##  "description": someone needs to add a description,
+
+    "exits": {"east": {"name": "Park Place", "cost": "0"}},
+
+    "items": []
+}
+
+room_pryzm = {
+    "name": "Pryzm",
+
+##  "description": someone needs to add a description,
+
+    "exits": {"North": {"name": "Park Place", "cost": "0"}},
+
+    "items": []
+} 
     
 
 rooms = {
@@ -107,4 +145,9 @@ rooms = {
     "Pres": room_pres
     "Corridor": room_corridor
     "Pres Host Room": room_preshostroom
+    "North Road": room_northroad
+    "Fattoush Restaurant": room_fattoush
+    "Park Place": room_parkplace
+    "Cathays Park": room_cathayspark
+    "Pryzm": room_pryzm
 }
