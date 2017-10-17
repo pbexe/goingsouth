@@ -23,4 +23,4 @@ ABILITIES = {
         "name": "Shot Boost"
         "damage": 5
         "tier": 2 #if you drink three shots in a raw you have a reduced damage
-},
+    },
