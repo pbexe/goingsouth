@@ -24,7 +24,7 @@ room_yourroom = {
 room_fridge = {
     "name": "Fridge",
 
-##   "description": someone needs to write description,
+    "description": "There was food before somebody had eaten it. You need to buy some more if you want to consume something apart from bottle of wine...actually do you really want?.."
 
     "exits": {"west": {"name": "Uni Halls", "cost": "0"}},
 
@@ -34,7 +34,7 @@ room_fridge = {
 room_tygwynroad = {
     "name": "Ty-Gwyn road",
 
-##    "description": someone needs to write description,
+    "description": "Quite big road though right now there are only a few people there - maybe because everyone is at Pryzm already?"
 
     "exits": {"south": {"name": "Pres", "cost": "10"}, "north": {"name": "Uni Halls", "cost": "0"}},
 
@@ -44,7 +44,7 @@ room_tygwynroad = {
 room_friendsroom = {
     "name": "Friends Room",
 
-##   "description": someone needs to add a description,
+    "description": "You finally found them, well done! Do you wish to have a drink to celebrate it right now?"
 
     "exits": {"east": {"name": "Uni Halls", "cost": "0"}},
 
