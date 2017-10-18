@@ -5,7 +5,7 @@ from abilities import ABILITIES
 inventory = []
 
 # Start game at the reception
-current_room = rooms["Reception"]
+current_room = rooms["Your Room"]
 
 money = 10
 
