@@ -13,7 +13,8 @@ room_unihalls = {
 room_yourroom = {
     "name": "Your room",
 
-##    "description": someone needs to write description,
+    "description":
+    "Your room looks like a complete mess right now. Maybe this is because of yesterday's party, maybe just because you had to submit 3 labs in the week - but right now the only thing that is clear is that there is no way anything can be found here"
 
     "exits": {"south": {"name": "Uni Halls", "cost": "0"}},
 
