@@ -12,7 +12,8 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install nose pylint
+
 # command to run tests
 script:
-  - python -m doctest -v game.py
-  - python -m doctest -v gameparser.py
+  - "nosetests && pylint"

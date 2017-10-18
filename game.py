@@ -380,12 +380,18 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 
+def battle(character):
+    print("A wild " + character['name'] + " has appeared")
+
+
 # This is the entry point of our program
 def main():
     print("\nYou must collect all of the items and return them to your personal tutor as you think they love collecting stolen items.\n\n Press enter to begin")
     input()
     # Main game loop
     while True:
+        if 'person' in current_room:
+            current_room['person'] = battle(current_room['person'])
         # Display game status (room description, inventory etc.)
         print_room(current_room)
         print_inventory_items(inventory)

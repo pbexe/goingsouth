@@ -1,4 +1,5 @@
 from items import *
+from characters import characters
 
 room_unihalls = {
     "name": "Uni Halls",
@@ -7,7 +8,9 @@ room_unihalls = {
 
     "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friend Room", "cost": "0"}, "North": {"name": "Your Room", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "person": characters['flat_mate']
 }
 
 room_yourroom = {
