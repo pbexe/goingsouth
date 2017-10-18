@@ -5,7 +5,25 @@ from player import *
 from items import *
 from gameparser import *
 from abilities import ABILITIES
+import sys
+import time
 
+def print_ascii(file_name):
+    # This function print out contents from a txt file each char at time.
+    # The parameter file_name is type string.
+    # When calling the func, the format of the argument should be "filename.txt"
+
+    with open(file_name) as f:
+
+        while True:
+            line = f.readline()
+            if not line:
+                break
+            else:
+                for char in line:
+                    sys.stdout.write(char)
+                    time.sleep(0.03)
+                    sys.stdout.flush()
 
 def add_ability(substance=False):
     """
@@ -267,6 +285,7 @@ def calculate_inventory_mass():
     for item in inventory:
         total += item['mass']
     return total
+
 
 
 def execute_take(item_id):
