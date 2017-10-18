@@ -50,7 +50,10 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    return ", ".join([item['name'] for item in items])
+    if len(items) > 0:
+        return ", ".join([item['name'] for item in items])
+    else:
+        return "nothing"
 
 
 def print_room_items(room):
