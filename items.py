@@ -28,11 +28,11 @@ item_mobile = {
     
     "name": "mobile phone",
     
-    "description": "mobile phone will be useful even you are not sure whom it belongs to",
+    "description": "sadsad",
     
     "is_alcohol": False,
     
-    "is_substance": False
+    "is_substance": False
 }
 
 item_beer = {
@@ -42,7 +42,7 @@ item_beer = {
 
     "description": "an ice cold refreshing Tesco everday value beer.",
     
-    "is_alcohol": True
+    "is_alcohol": True,
 
     "is_substance": False
 }
@@ -52,9 +52,9 @@ item_vodka = {
 
     "name": "a shot of vodka",
 
-##    "description": ,
+    "description": "A slightly warm and suspicious show ot vodka",
     
-    "is_alcohol": True
+    "is_alcohol": True,
 
     "is_substance": False
 }
