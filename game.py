@@ -4,6 +4,32 @@ from map import rooms
 from player import *
 from items import *
 from gameparser import *
+from abilities import ABILITIES
+
+
+def add_ability(substance=False):
+    """
+    TODO:
+    - Implement substances
+    """
+    for item in ABILITIES:
+        if item not in player_abilities:
+            player_abilities.append(item)
+            break
+
+
+def consume_item(item):
+    if item['id'] == money:
+        money += 10
+        return True
+    elif item['is_alcohol']:
+        add_ability()
+        return True
+    elif item['is_substance']:
+        add_ability(True)
+        return True
+    else:
+        return False
 
 
 
@@ -351,53 +377,12 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 
-def game_over():
-    complete = True
-    items = [item_id, item_laptop, item_money, item_biscuits, item_pen, item_handbook]
-    for item in items:
-        if item not in rooms['Tutor']['items']:
-            complete = False
-    return complete
-
-def display_complete():
-    print("""
-             ____________________________________________________
-            /                                                    \\
-           |    _____________________________________________     |
-           |   |                                             |    |
-           |   |  $ echo "Game over!"                        |    |
-           |   |  Game over!                                 |    |
-           |   |  $ echo "You win!"                          |    |
-           |   |  You win!                                   |    |
-           |   |  $                                          |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |                                             |    |
-           |   |_____________________________________________|    |
-           |                                                      |
-            \_____________________________________________________/
-                   \_______________________________________/
-                _______________________________________________
-             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_
-          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_
-       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_
-    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_
- _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_
-:-----------------------------------------------------------------------------:
-`---._.-----------------------------------------------------------------._.---'""")
-
 # This is the entry point of our program
 def main():
     print("\nYou must collect all of the items and return them to your personal tutor as you think they love collecting stolen items.\n\n Press enter to begin")
     input()
     # Main game loop
     while True:
-        if game_over():
-            break
         # Display game status (room description, inventory etc.)
         print_room(current_room)
         print_inventory_items(inventory)
