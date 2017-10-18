@@ -163,7 +163,7 @@ def exit_leads_to(exits, direction):
     >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
     'Reception'
     """
-    return rooms[exits[direction]]["name"]
+    return rooms[exits[direction]['name']]["name"]
 
 
 def print_exit(direction, leads_to):
@@ -254,7 +254,7 @@ def execute_go(direction):
     """
     global current_room
     if direction in current_room['exits']:
-        current_room = rooms[current_room['exits'][direction]]
+        current_room = rooms[current_room['exits'][direction]['name']]
     else:
         print("You cannot go there.")
 
