@@ -74,7 +74,7 @@ def list_of_items(items):
     if len(items) > 0:
         return ", ".join([item['name'] for item in items])
     else:
-        return "nothing"
+        return "no items"
 
 
 def print_room_items(room):
@@ -164,7 +164,7 @@ def print_menu(exits, room_items, inv_items):
     What do you want to do?
 
     """
-    print("You can carry an extra "+ str(3-round(calculate_inventory_mass(), 1))+"kg of items.")
+    print("You can carry an extra "+ str(3-round(calculate_inventory_mass(), 1))+"kg of items.\n")
     print("You can:")
     # Iterate over available exits
     for direction in exits:
@@ -175,6 +175,11 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
         print("DROP " + item['id'].upper() + " to drop your " + item['name'] + ".")
+    for item in inv_items:
+        if item["is_substance"]:
+            print("EAT " + item['id'].upper() + " to eat your " + item['name'] + ".")
+        elif item["is_alcohol"]:
+            print("DRINK " + item['id'].upper() + " to drink your " + item['name'] + ".")
 
     print("What do you want to do?")
 
@@ -363,6 +368,7 @@ def main():
             current_room['person'] = battle(current_room['person'])
         # Display game status (room description, inventory etc.)
         print_room(current_room)
+        print("You are currently carrying " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
