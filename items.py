@@ -7,7 +7,9 @@ item_money = {
 
     "is_alcohol": False,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass": 0
     
 }
 
@@ -20,7 +22,9 @@ item_id = {
 
     "is_alcohol": False,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass": 0.5
 }
 
 item_mobile = {
@@ -32,7 +36,9 @@ item_mobile = {
     
     "is_alcohol": False,
     
-    "is_substance": False
+    "is_substance": False,
+
+    "mass": 0.5
 }
 
 item_beer = {
@@ -44,7 +50,9 @@ item_beer = {
     
     "is_alcohol": True,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass": 0.5
 }
 
 item_vodka = {
@@ -56,5 +64,7 @@ item_vodka = {
     
     "is_alcohol": True,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass": 1
 }
