@@ -6,7 +6,7 @@ room_unihalls = {
 
     "description": "Uni Hall description goes here",
 
-    "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friend Room", "cost": "0"}, "North": {"name": "Your Room", "cost": "0"}},
+    "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friends Room", "cost": "0"}, "north": {"name": "Your Room", "cost": "0"}},
 
     "items": [],
 
@@ -114,7 +114,7 @@ room_parkplace = {
 
      "description": "someone needs to add a description",
 
-    "exits": {"North": {"name": "North Road", "cost": "0"}, "west": {"name": "Cathays Park", "cost": "0"}, "south": {"name": "Pryzm", "cost": "0"}},
+    "exits": {"north": {"name": "North Road", "cost": "0"}, "west": {"name": "Cathays Park", "cost": "0"}, "south": {"name": "Pryzm", "cost": "0"}},
 
     "items": []
 }
@@ -134,7 +134,7 @@ room_pryzm = {
 
     "description": "someone needs to add a description",
 
-    "exits": {"North": {"name": "Park Place", "cost": "0"}},
+    "exits": {"north": {"name": "Park Place", "cost": "0"}},
 
     "items": []
 } 

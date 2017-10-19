@@ -25,8 +25,10 @@ def print_ascii(file_name):
                     time.sleep(0.03)
                     sys.stdout.flush()
 
+
 def add_ability(substance=False):
     """
+    Adds a random ability to the player
     TODO:
     - Implement substances
     """
@@ -37,6 +39,12 @@ def add_ability(substance=False):
 
 
 def consume_item(item):
+    """
+    Applies the effect of an item.
+    Note: This does not actually delete the item.
+
+    If the item is consumable, True is returned, else, False is returned.
+    """
     if item['id'] == money:
         money += 10
         return True
@@ -309,6 +317,24 @@ def execute_take(item_id):
         print("You cannot take that")
 
 
+def execute_consume(item_id):
+    """This function takes an item_id as an argument and moves this item from the
+    list of items in the current room to the player's inventory. However, if
+    there is no such item in the room, this function prints
+    "You cannot take that."
+    """
+    found = False
+    global inventory
+    global current_room
+    for index, item in enumerate(current_room['items']):
+        if item['id'] == item_id:
+            consumed = consume_item(item)
+            if consumed:
+                found = True
+    if found == False:
+        print("You cannot eat that")
+
+
 
 
 def execute_drop(item_id):
@@ -336,9 +362,14 @@ def execute_command(command):
 
     """
 
+    consuming_words = ['eat', 'drink', 'consume']
+
     if 0 == len(command):
         return
 
+    if command[0] in consuming_words:
+        if len(command) > 1:
+            execute_consume(command[1])
     if command[0] == "go":
         if len(command) > 1:
             execute_go(command[1])
