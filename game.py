@@ -45,14 +45,17 @@ def consume_item(item):
 
     If the item is consumable, True is returned, else, False is returned.
     """
+    global money
     if item['id'] == money:
         money += 10
         return True
     elif item['is_alcohol']:
         add_ability()
+        print("You drank the " + item['name'])
         return True
     elif item['is_substance']:
         add_ability(True)
+        print("You ate the " + item['name'])
         return True
     else:
         return False
@@ -331,6 +334,7 @@ def execute_consume(item_id):
             consumed = consume_item(item)
             if consumed:
                 found = True
+                del current_room['items'][index]
     if found == False:
         print("You cannot eat that")
 
@@ -370,7 +374,9 @@ def execute_command(command):
     if command[0] in consuming_words:
         if len(command) > 1:
             execute_consume(command[1])
-    if command[0] == "go":
+        else:
+            print("Consume what?")
+    elif command[0] == "go":
         if len(command) > 1:
             execute_go(command[1])
         else:
@@ -431,6 +437,8 @@ def move(exits, direction):
 
 
 def battle(character):
+    if character['health'] <= 0:
+        return
     print("A wild " + character['name'] + " has appeared")
 
 
