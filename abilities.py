@@ -5,7 +5,7 @@ ABILITIES = {
         "tier": 0
     },
     "tac_chunder": {
-        "name": "Tacticaly Chunder On Them",
+        "name": "Tactically Chunder On Them",
         "damage": 15,
         "tier": 0
     },

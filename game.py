@@ -10,6 +10,9 @@ import time
 import math
 import winsound
 
+gameover = False
+gamecompleted = False
+
 def print_ascii(file_name):
     # This function print out contents from a txt file each char at time.
     # The parameter file_name is type string.
@@ -341,13 +344,21 @@ def battle(character):
         return
     print("A wild " + character['name'] + " has appeared")
 
+def game_over():
+    if gameover == True:
+        print_ascii("gameover.txt")
+
+def game_complete():
+    if gamecompleted == True:
+        print_ascii("gamecompleted.txt")
+
 
 # This is the entry point of our program
 def main():
     print("You are about to embark on your journey. Press enter to begin")
     input()
     # Main game loop
-    while True:
+    while gameover == False or gamecompleted == False:
         if 'person' in current_room:
             current_room['person'] = battle(current_room['person'])
         # Display game status (room description, inventory etc.)
@@ -358,7 +369,9 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
         # Execute the player's command
         execute_command(command)
-    display_complete()
+
+        game_complete()
+        game_over()
 
 
 # Are we being run as a script? If so, run main().
