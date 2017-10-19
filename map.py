@@ -4,7 +4,7 @@ from characters import characters
 room_unihalls = {
     "name": "Uni Halls",
 
-    "description": "Uni Hall description goes here",
+    "description": "In the middle of nowhere, the only thing going for it is the free bus service.",
 
     "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friends Room", "cost": "0"}, "north": {"name": "Your Room", "cost": "0"}},
 
@@ -58,7 +58,7 @@ room_friendsroom = {
 room_pres = {
     "name": "Pres",
 
-    "description": "someone needs to write description",
+    "description": "God, Talybont North is a complete dive. You can barely fit 6 people in the kitchen.",
 
     "exits": {"west": {"name": "Corridor", "cost": "0"}, "south": {"name": "North Road", "cost": "0"}},
 
@@ -69,7 +69,7 @@ room_pres = {
 room_corridor = {
     "name": "Corridor",
 
-    "description": "someone needs to write a description",
+    "description": "It's a corridor. No description needed.",
 
     "exits": {"east": {"name": "Pres", "cost": "0"}, "south": {"name": "Pres Host Room", "cost": "0"}},
 
@@ -81,7 +81,7 @@ room_corridor = {
 room_preshostroom = {
     "name": "Pres Host Room",
 
-     "description": "someone needs to write a description",
+     "description": "The rather acrid smell of booze is plentiful.",
 
     "exits": {"north": {"name": "Corridor", "cost": "0"}},
 
@@ -92,7 +92,7 @@ room_preshostroom = {
 room_northroad = {
     "name": "North Road",
 
-     "description": "someone needs to add a description",
+     "description": "North road is deceptively long. Crossing the road drunk is an accident waiting to happen.",
 
     "exits": {"east": {"name": "Fattoush Restaurant", "cost": "0"}, "south": {"name": "Park Place", "cost": "0"}, "north": {"name": "Pres", "cost": "0"}},
 
@@ -102,11 +102,11 @@ room_northroad = {
 room_fattoush = {
     "name": "Fattoush Restaurant",
 
-     "description": "someone needs to add a description",
+     "description": "What's not to love about cheap food after, or during, a night out?",
 
     "exits": {"west": {"name": "North Road", "cost": "0"}},
 
-    "items": []
+    "items": [item_sauce, item_cheeseburger, item_mixed_grill, item_chicken]
 }
 
 room_parkplace = {
@@ -132,7 +132,7 @@ room_cathayspark = {
 room_pryzm = {
     "name": "Pryzm",
 
-    "description": "someone needs to add a description",
+    "description": "Please visit https://www.pryzm.co.uk/cardiff for more details.",
 
     "exits": {"north": {"name": "Park Place", "cost": "0"}},
 

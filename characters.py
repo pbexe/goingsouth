@@ -14,7 +14,8 @@ characters = {
         ]
     }
 
-    "pres_host" : {
+
+    ,"pres_host" : {
         "name": "Pres Host",
         "health": 130,
         "abilities": [
@@ -25,8 +26,8 @@ characters = {
             item_vodka,
             item_money
         ]
-}
-    "homeless_man": {
+    }
+    ,"homeless_man": {
         "name": "Homeless Man",
         "health": 80,
         "abilities": [
@@ -34,11 +35,12 @@ characters = {
             ABILITIES['blackmail']
         ],
         'items': [
-            item_shoes
+            item_shoes,
+            item_sauce
         ]
 
-        }
-
     }
+
+}
 
 
