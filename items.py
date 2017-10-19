@@ -7,7 +7,9 @@ item_money = {
 
     "is_alcohol": False,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0.05
     
 }
 
@@ -20,7 +22,9 @@ item_id = {
 
     "is_alcohol": False,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0.2
 }
 
 item_mobile = {
@@ -32,7 +36,10 @@ item_mobile = {
     
     "is_alcohol": False,
     
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0.5
+    
 }
 
 item_beer = {
@@ -44,7 +51,9 @@ item_beer = {
     
     "is_alcohol": True,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0.6
 }
 
 item_vodka = {
@@ -56,7 +65,9 @@ item_vodka = {
     
     "is_alcohol": True,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0.2
 }
 
 item_shoes = {
@@ -68,7 +79,9 @@ item_shoes = {
     
     "is_alcohol": False,
 
-    "is_substance": False
+    "is_substance": False,
+
+    "mass" : 0
 }
 #Fattoushian Cusine
 item_chicken = {
@@ -82,7 +95,9 @@ item_chicken = {
 
     "is_substance": True,
 
-    "Cost" : "8.95",
+    "cost" : 8.95,
+
+    "mass" : 1
 }
 item_mixed_grill = {
     "id": "mixed_grill",
@@ -95,8 +110,9 @@ item_mixed_grill = {
 
     "is_substance": True,
 
-    "Cost" : "10.95",
+    "cost" : 10.95,
 
+    "mass" : 1
 }
 item_cheeseburger = {
     "id": "cheeseburger",
@@ -109,8 +125,9 @@ item_cheeseburger = {
 
     "is_substance": True,
 
-    "Cost" : "4.20",
+    "cost" : 4.20,
 
+    "mass" : 0.6
 }
 item_sauce = {
     "id": "sauce",
@@ -123,7 +140,9 @@ item_sauce = {
 
     "is_substance": True,
 
-    "Cost" : "0.40",
+    "cost" : 0.40,
+
+    "mass" : 0.2
 }
 
 

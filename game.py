@@ -7,6 +7,8 @@ from gameparser import *
 from abilities import ABILITIES
 import sys
 import time
+import math
+import winsound
 
 def print_ascii(file_name):
     # This function print out contents from a txt file each char at time.
@@ -159,7 +161,7 @@ def print_menu(exits, room_items, inv_items):
     What do you want to do?
 
     """
-    print("Current inventory mass:", round(calculate_inventory_mass(), 1))
+    print("You can carry an extra "+ str(3-round(calculate_inventory_mass(), 1))+"kg of items.")
     print("You can:")
     # Iterate over available exits
     for direction in exits:
@@ -270,7 +272,9 @@ def execute_command(command):
     execute_take, or execute_drop, supplying the second word as the argument.
     """
 
-    consuming_words = ['eat', 'drink', 'consume']
+    consuming_words = ['eat', 'drink', 'consume', "down", "chug", "consume",
+                       "scran","swallow","gulp","bite","ingest","masticate",
+                       "chew","devour"]
 
     if 0 == len(command):
         return
@@ -340,7 +344,7 @@ def battle(character):
 
 # This is the entry point of our program
 def main():
-    print("\nYou must collect all of the items and return them to your personal tutor as you think they love collecting stolen items.\n\n Press enter to begin")
+    print("You are about to embark on your journey. Press enter to begin")
     input()
     # Main game loop
     while True:
@@ -352,7 +356,6 @@ def main():
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
-
         # Execute the player's command
         execute_command(command)
     display_complete()
