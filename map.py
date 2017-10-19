@@ -112,7 +112,7 @@ room_fattoush = {
 room_parkplace = {
     "name": "Park Place",
 
-     "description": "someone needs to add a description",
+     "description": "It's Bin day, the stench is awful here.",
 
     "exits": {"north": {"name": "North Road", "cost": "0"}, "west": {"name": "Cathays Park", "cost": "0"}, "south": {"name": "Pryzm", "cost": "0"}},
 
