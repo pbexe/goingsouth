@@ -40,6 +40,18 @@ characters = {
         ]
 
     }
+    ,"bouncer": {
+        "name": "Bouncer",
+        "health": 180,
+        "abilities": [
+            ABILITIES['bottle'],
+            ABILITIES['hadouken']
+        ],
+        'items': []
+    }
+}
+            
+            
 
 }
 
