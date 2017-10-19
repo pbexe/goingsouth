@@ -144,7 +144,7 @@ rooms = {
     "Uni Halls": room_unihalls,
     "Your Room": room_yourroom,
     "Fridge": room_fridge,
-    "Ty-Gywn road": room_tygwynroad,
+    "Ty-Gwyn road": room_tygwynroad,
     "Friends Room": room_friendsroom,
     "Pres": room_pres,
     "Corridor": room_corridor,
