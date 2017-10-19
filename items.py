@@ -7,9 +7,7 @@ item_money = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
-
-    "mass": 0
+    "is_substance": False
     
 }
 
@@ -22,9 +20,7 @@ item_id = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
-
-    "mass": 0.5
+    "is_substance": False
 }
 
 item_mobile = {
@@ -36,9 +32,7 @@ item_mobile = {
     
     "is_alcohol": False,
     
-    "is_substance": False,
-
-    "mass": 0.5
+    "is_substance": False
 }
 
 item_beer = {
@@ -50,9 +44,7 @@ item_beer = {
     
     "is_alcohol": True,
 
-    "is_substance": False,
-
-    "mass": 0.5
+    "is_substance": False
 }
 
 item_vodka = {
@@ -64,7 +56,17 @@ item_vodka = {
     
     "is_alcohol": True,
 
-    "is_substance": False,
+    "is_substance": False
+}
 
-    "mass": 1
+item_shoes = {
+    "id": "shoes",
+
+    "name": "shoes",
+
+    "description": "shoes that reek but you 'smart' shoes to get into the club.",
+    
+    "is_alcohol": False,
+
+    "is_substance": False
 }
