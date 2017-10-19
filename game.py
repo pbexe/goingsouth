@@ -109,12 +109,10 @@ def print_room(room):
     (use print_room_items() for this). 
     """
     # Display room name
-    print()
-    print(room["name"].upper())
-    print()
+    print(room["name"].upper()+"\n")
+
     # Display room description
-    print(room["description"])
-    print()
+    print(room["description"]+"\n")
     if len(room['items']) > 0:
         print_room_items(room)
 
@@ -244,14 +242,14 @@ def execute_consume(item_id):
     found = False
     global inventory
     global current_room
-    for index, item in enumerate(current_room['items']):
+    for index, item in enumerate(inventory):
         if item['id'] == item_id:
             consumed = consume_item(item)
             if consumed:
                 found = True
-                del current_room['items'][index]
+                del inventory[index]
     if found == False:
-        print("You cannot eat that")
+        print("You cannot consume that")
 
 
 
@@ -357,11 +355,19 @@ def game_complete():
     if gamecompleted == True:
         print_ascii("gamecompleted.txt")
 
+def cheat_checker(code):
+    global inventory
+    global money
+    if code == "dollar":
+        money += 1000
+        print("You have been given £1000 for this entering this code.")
+
 
 # This is the entry point of our program
 def main():
     print("You are about to embark on your journey. Press enter to begin")
-    input()
+    cheat_code = input()
+    cheat_checker(cheat_code)
     # Main game loop
     while gameover == False or gamecompleted == False:
         if 'person' in current_room:
