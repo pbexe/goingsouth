@@ -80,11 +80,9 @@ item_chicken = {
     
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "Cost" : "8.95",
-
-    "Type" : "Food"
 }
 item_mixed_grill = {
     "id": "mixed_grill",
@@ -95,11 +93,10 @@ item_mixed_grill = {
     
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "Cost" : "10.95",
 
-    "Type" : "Food"
 }
 item_cheeseburger = {
     "id": "cheeseburger",
@@ -110,11 +107,10 @@ item_cheeseburger = {
     
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "Cost" : "4.20",
 
-    "Type" : "Food"
 }
 item_sauce = {
     "id": "sauce",
@@ -128,38 +124,6 @@ item_sauce = {
     "is_substance": True,
 
     "Cost" : "0.40",
-
-    "Type" : "Food"
-}
-item_coke = {
-    "id": "coke",
-
-    "name": "a can of Cola",
-
-    "description": "Best served Ice Cold.",
-    
-    "is_alcohol": False,
-
-    "is_substance": False,
-
-    "Cost" : "1.00",
-
-    "Type" : "Drink"
-}
-item_fanta = {
-    "id": "fanta",
-
-    "name": "a can of Fanta",
-
-    "description": "Best served mixed with blackcurrant Oasis.",
-    
-    "is_alcohol": False,
-
-    "is_substance": False,
-
-    "Cost" : "1.00",
-
-    "Type" : "Drink"
 }
 
 
