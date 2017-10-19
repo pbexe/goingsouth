@@ -13,4 +13,32 @@ characters = {
             item_id
         ]
     }
+
+    "pres_host" : {
+        "name": "Pres Host",
+        "health": 130,
+        "abilities": [
+            ABILITIES['dance'],
+            ABILITIES['bottle']
+        ],
+        'items': [
+            item_vodka,
+            item_money
+        ]
 }
+    "homeless_man": {
+        "name": "Homeless Man",
+        "health": 80,
+        "abilities": [
+            ABILITIES['steal'],
+            ABILITIES['blackmail']
+        ],
+        'items': [
+            item_shoes
+        ]
+
+        }
+
+    }
+
+
