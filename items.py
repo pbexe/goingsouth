@@ -3,7 +3,7 @@ item_money = {
 
     "name": "money",
 
-    "description": "a new crisp, plastic note",
+    "description": "a new crisp, plastic note.",
 
     "is_alcohol": False,
 
@@ -16,7 +16,7 @@ item_id = {
 
     "name": "driving licence",
 
-    "description": "a driving licence that looks... almost like you, you need it to get into the club",
+    "description": "a driving licence that looks... almost like you, you need it to get into the club.",
 
     "is_alcohol": False,
 
@@ -28,7 +28,7 @@ item_mobile = {
     
     "name": "mobile phone",
     
-    "description": "sadsad",
+    "description": "sadsad.",
     
     "is_alcohol": False,
     
@@ -52,7 +52,7 @@ item_vodka = {
 
     "name": "a shot of vodka",
 
-    "description": "A slightly warm and suspicious show ot vodka",
+    "description": "a slightly warm and suspicious shot of vodka.",
     
     "is_alcohol": True,
 
@@ -62,11 +62,108 @@ item_vodka = {
 item_shoes = {
     "id": "shoes",
 
-    "name": "shoes",
+    "name": "a pair of shoes",
 
-    "description": "shoes that reek but you 'smart' shoes to get into the club.",
+    "description": "these shoes reek, but you'll need them to get into the club.",
     
     "is_alcohol": False,
 
     "is_substance": False
 }
+#Fattoushian Cusine
+item_chicken = {
+    "id": "chicken",
+
+    "name": "a chicken shish",
+
+    "description": "A traditional dish, specially marinated cubes of chicken brochette & grilled.",
+    
+    "is_alcohol": False,
+
+    "is_substance": False,
+
+    "Cost" : "8.95",
+
+    "Type" : "Food"
+}
+item_mixed_grill = {
+    "id": "mixed_grill",
+
+    "name": "a mixed grill",
+
+    "description": "Shish chicken, lamb meshwi & lamb kofte in one serving. A real bargain!",
+    
+    "is_alcohol": False,
+
+    "is_substance": False,
+
+    "Cost" : "10.95",
+
+    "Type" : "Food"
+}
+item_cheeseburger = {
+    "id": "cheeseburger",
+
+    "name": "a cheeseburger",
+
+    "description": "100% homemade & served with chips, salad & sauce.",
+    
+    "is_alcohol": False,
+
+    "is_substance": False,
+
+    "Cost" : "4.20",
+
+    "Type" : "Food"
+}
+item_sauce = {
+    "id": "sauce",
+
+    "name": "a pot of raw sauce",
+
+    "description": "No ketchup, just sauce. Raw sauce.",
+    
+    "is_alcohol": False,
+
+    "is_substance": True,
+
+    "Cost" : "0.40",
+
+    "Type" : "Food"
+}
+item_coke = {
+    "id": "coke",
+
+    "name": "a can of Cola",
+
+    "description": "Best served Ice Cold.",
+    
+    "is_alcohol": False,
+
+    "is_substance": False,
+
+    "Cost" : "1.00",
+
+    "Type" : "Drink"
+}
+item_fanta = {
+    "id": "fanta",
+
+    "name": "a can of Fanta",
+
+    "description": "Best served mixed with blackcurrant Oasis.",
+    
+    "is_alcohol": False,
+
+    "is_substance": False,
+
+    "Cost" : "1.00",
+
+    "Type" : "Drink"
+}
+
+
+
+
+
+
