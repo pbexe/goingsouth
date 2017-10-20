@@ -30,7 +30,7 @@ def print_ascii(file_name):
             else:
                 for char in line:
                     sys.stdout.write(char)
-                    time.sleep(0.0005)
+                    time.sleep(0.0001)
                     sys.stdout.flush()
 
 
@@ -229,6 +229,7 @@ def execute_take(item_id):
     for index, item in enumerate(current_room['items']):
         if item['id'] == item_id:
             found = True
+            if item
             if calculate_inventory_mass() + item['mass'] <= 3:
                 inventory.append(item)
                 del current_room['items'][index]
@@ -383,6 +384,7 @@ def battle(character):
             else:
                 print("Invalid attack")
     clear_screen()
+    inventory.extend(character['items'])
     return character
     
 
