@@ -421,6 +421,11 @@ def battle(character):
         input()
         clear_screen()
         return character
+    for player_attack in character["attack speed"]:
+        if player_attack >= character["attack speed"]:
+            print ("YOU ARE FIRST TO ATTACK")
+        else:
+            print("YOUR OPPONENT GOES FIRST")
     # Main battle loop
     while character['health'] > 0:
         print("========================")
