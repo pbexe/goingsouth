@@ -1,6 +1,5 @@
 from items import *
 from characters import characters
-from game import print_ascii
 
 room_unihalls = {
     "name": "Uni Halls",
@@ -11,9 +10,9 @@ room_unihalls = {
 
     "items": [],
 
-    "person": characters['flat_mate']
+    "person": characters['flat_mate'],
 
-    print_ascii("")
+    "ascii_art": []
 }
 
 room_yourroom = {
@@ -26,9 +25,9 @@ room_yourroom = {
 
     "items": [],
 
-    "character": []
+    "character": [],
 
-    print_ascii("room.txt")
+    "ascii_art": [room.txt]
 }
 
 room_fridge = {
@@ -40,9 +39,9 @@ room_fridge = {
 
     "items": [item_beer],
 
-    "character": []
+    "character": [],
 
-    print_ascii("fridge.txt")
+    "ascii_art": [fridge.txt]
 }
 
 room_tygwynroad = {
@@ -54,9 +53,10 @@ room_tygwynroad = {
 
     "items" : [],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
+    
 }
 
 room_friendsroom = {
@@ -68,7 +68,9 @@ room_friendsroom = {
 
     "items": [item_money],
 
-    "character": []
+    "character": [],
+
+    "ascii_art": [room.txt]
 
 }    
 
@@ -81,9 +83,9 @@ room_pres = {
 
     "items": [item_vodka],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
 
 }
 
@@ -96,9 +98,9 @@ room_corridor = {
 
     "items": [],
 
-    "character": ['pres_host']
+    "character": ['pres_host'],
 
-    print_ascii("")
+    "ascii_art": []
 
 }
 
@@ -112,9 +114,9 @@ room_preshostroom = {
 
     "items": [],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
 
 }
 
@@ -127,9 +129,9 @@ room_northroad = {
 
     "items": [],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
 }
 
 room_fattoush = {
@@ -141,9 +143,10 @@ room_fattoush = {
 
     "items": [item_sauce, item_cheeseburger, item_mixed_grill, item_chicken],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
+
 }
 
 room_parkplace = {
@@ -155,9 +158,10 @@ room_parkplace = {
 
     "items": [],
 
-    "character": []
+    "character": [],
 
-    print_ascii("")
+    "ascii_art": []
+
 }
 
 room_cathayspark = {
@@ -169,9 +173,10 @@ room_cathayspark = {
 
     "items": [],
 
-    "person": characters['homeless_man']
+    "person": characters['homeless_man'],
 
-    print_ascii("")
+    "ascii_art": []
+
 }
 
 room_pryzm = {
@@ -183,9 +188,10 @@ room_pryzm = {
 
     "items": [],
 
-    "person": characters['bouncer']
+    "person": characters['bouncer'],
 
-    print_ascii("")
+    "ascii_art": []
+
 } 
     
 
