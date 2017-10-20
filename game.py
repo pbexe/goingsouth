@@ -14,9 +14,11 @@ gameover = False
 gamecompleted = False
 
 def print_ascii(file_name):
-    # This function print out contents from a txt file each char at time.
-    # The parameter file_name is type string.
-    # When calling the func, the format of the argument should be "filename.txt"
+    """
+    This function print out contents from a txt file each char at time.
+    The parameter file_name is type string.
+    When calling the func, the format of the argument should be "filename.txt"
+    """
 
     with open(file_name) as f:
 
@@ -346,6 +348,17 @@ def battle(character):
     if character['health'] <= 0:
         return
     print("A wild " + character['name'] + " has appeared")
+    if len(player_abilities) == 0:
+        print("You are not yet drunk enough to fight " + character['name'] + ". You must find alcohol in order to fight them.")
+        return
+    # Main battle loop
+    while character['health'] > 0:
+        print("========================")
+        print(character['name'].upper() + ":")
+        print("Health: " + str(character))
+        print("Abilities: " + ", ".join([item['name'] for item in character['abilities']]))
+        print("========================")
+    
 
 def game_over():
     if gameover == True:
