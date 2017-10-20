@@ -376,20 +376,33 @@ def battle(character):
         print("Health: " + str(health))
         print("Abilities: " + ", ".join([item['name'] for item in player_abilities]))
         print("========================")
-
         print("\nYour turn to attack:")
+        # Print the attacks
         for index, attack in enumerate(player_abilities):
             print(str(index + 1) + ". " + attack['name'])
+        # Get the attack input
         while True:
             attack = int(input("> ")) - 1
             if player_abilities[attack]:
                 character['health'] -= player_abilities[attack]['damage']
+                print("You did "+ str(player_abilities[attack]['damage']) + " damage")
                 break
             else:
                 print("Invalid attack")
+        # If they are still alive
+        if character['health'] > 0:
+            enemy_attack = random.choice(character['abilities'])
+            health -= enemy_attack['damage']
+            print("They did "+ str(player_abilities[attack]['damage']) + " damage")
+            # If you dead
+            if health <= 0:
+                return character
     clear_screen()
     # You pick up their items
     inventory.extend(character['items'])
+    print("You picked up " + list_of_items(character['items']))
+    input("Press ENTER to continue")
+    clear_screen()
     return character
     
 
