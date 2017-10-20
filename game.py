@@ -178,7 +178,7 @@ def print_menu(exits, room_items, inv_items):
         else:
             print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
-        print("DROP " + item['id'].upper() + " to drop your " + item['name'] + ".")
+        print("DROP/INSPECT " + item['id'].upper() + " to drop your " + item['name'] + ".")
     for item in inv_items:
         if item["is_substance"]:
             print("EAT " + item['id'].upper() + " to eat your " + item['name'] + ".")
@@ -307,6 +307,23 @@ def execute_drop(item_id):
     if found == False:
         print("You do not have this item")
 
+def execute_inspect(item_id):
+    """This function takes an item_id as an argument and moves this item from the
+    player's inventory to list of items in the current room. However, if there is
+    no such item in the inventory, this function prints "You cannot drop that."
+    """
+    found = False
+    global inventory
+    global current_room
+    for index, item in enumerate(inventory):
+        if item['id'] == item_id:
+            found = True
+            print(Item['description'])
+            del inventory[index]
+    if found == False:
+        print("You do not have this item")
+
+
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -350,6 +367,12 @@ def execute_command(command):
             execute_buy(command[1])
         else:
             print("Buy what?")
+
+    elif command[0] == "inspect":
+        if len(command) > 1:
+            execute_buy(command[1])
+        else:
+            print("Inspect what?")
 
     else:
         print("This makes no sense.")
