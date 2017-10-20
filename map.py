@@ -1,5 +1,6 @@
 from items import *
 from characters import characters
+from game import print_ascii
 
 room_unihalls = {
     "name": "Uni Halls",
@@ -11,6 +12,8 @@ room_unihalls = {
     "items": [],
 
     "person": characters['flat_mate']
+
+    print_ascii("")
 }
 
 room_yourroom = {
@@ -24,6 +27,8 @@ room_yourroom = {
     "items": [],
 
     "character": []
+
+    print_ascii("room.txt")
 }
 
 room_fridge = {
@@ -36,6 +41,8 @@ room_fridge = {
     "items": [item_beer],
 
     "character": []
+
+    print_ascii("fridge.txt")
 }
 
 room_tygwynroad = {
@@ -48,6 +55,8 @@ room_tygwynroad = {
     "items" : [],
 
     "character": []
+
+    print_ascii("")
 }
 
 room_friendsroom = {
@@ -74,6 +83,8 @@ room_pres = {
 
     "character": []
 
+    print_ascii("")
+
 }
 
 room_corridor = {
@@ -86,6 +97,8 @@ room_corridor = {
     "items": [],
 
     "character": ['pres_host']
+
+    print_ascii("")
 
 }
 
@@ -101,6 +114,8 @@ room_preshostroom = {
 
     "character": []
 
+    print_ascii("")
+
 }
 
 room_northroad = {
@@ -113,6 +128,8 @@ room_northroad = {
     "items": [],
 
     "character": []
+
+    print_ascii("")
 }
 
 room_fattoush = {
@@ -125,6 +142,8 @@ room_fattoush = {
     "items": [item_sauce, item_cheeseburger, item_mixed_grill, item_chicken],
 
     "character": []
+
+    print_ascii("")
 }
 
 room_parkplace = {
@@ -137,6 +156,8 @@ room_parkplace = {
     "items": [],
 
     "character": []
+
+    print_ascii("")
 }
 
 room_cathayspark = {
@@ -149,6 +170,8 @@ room_cathayspark = {
     "items": [],
 
     "person": characters['homeless_man']
+
+    print_ascii("")
 }
 
 room_pryzm = {
@@ -161,6 +184,8 @@ room_pryzm = {
     "items": [],
 
     "person": characters['bouncer']
+
+    print_ascii("")
 } 
     
 
