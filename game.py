@@ -468,6 +468,7 @@ def main():
     # Main game loop
     while gameover == False or gamecompleted == False:
         # Display game status (room description, inventory etc.)
+        print_ascii(current_room["ascii_art"])
         print_room(current_room)
         print("You are currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
