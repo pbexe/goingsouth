@@ -21,7 +21,9 @@ room_yourroom = {
 
     "exits": {"south": {"name": "Uni Halls", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "character": []
 }
 
 room_fridge = {
@@ -31,7 +33,9 @@ room_fridge = {
 
     "exits": {"west": {"name": "Uni Halls", "cost": "0"}},
 
-    "items": [item_beer]
+    "items": [item_beer],
+
+    "character": []
 }
 
 room_tygwynroad = {
@@ -41,7 +45,9 @@ room_tygwynroad = {
 
     "exits": {"south": {"name": "Pres", "cost": "10"}, "north": {"name": "Uni Halls", "cost": "0"}},
 
-    "items" : []
+    "items" : [],
+
+    "character": []
 }
 
 room_friendsroom = {
@@ -51,7 +57,9 @@ room_friendsroom = {
 
     "exits": {"east": {"name": "Uni Halls", "cost": "0"}},
 
-    "items": [item_money]
+    "items": [item_money],
+
+    "character": []
 
 }    
 
@@ -62,7 +70,9 @@ room_pres = {
 
     "exits": {"west": {"name": "Corridor", "cost": "0"}, "south": {"name": "North Road", "cost": "0"}},
 
-    "items": [item_vodka]
+    "items": [item_vodka],
+
+    "character": []
 
 }
 
@@ -73,7 +83,9 @@ room_corridor = {
 
     "exits": {"east": {"name": "Pres", "cost": "0"}, "south": {"name": "Pres Host Room", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "character": ['pres_host']
 
 }
 
@@ -85,7 +97,9 @@ room_preshostroom = {
 
     "exits": {"north": {"name": "Corridor", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "character": []
 
 }
 
@@ -96,7 +110,9 @@ room_northroad = {
 
     "exits": {"east": {"name": "Fattoush Restaurant", "cost": "0"}, "south": {"name": "Park Place", "cost": "0"}, "north": {"name": "Pres", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "character": []
 }
 
 room_fattoush = {
@@ -106,7 +122,9 @@ room_fattoush = {
 
     "exits": {"west": {"name": "North Road", "cost": "0"}},
 
-    "items": [item_sauce, item_cheeseburger, item_mixed_grill, item_chicken]
+    "items": [item_sauce, item_cheeseburger, item_mixed_grill, item_chicken],
+
+    "character": []
 }
 
 room_parkplace = {
@@ -116,7 +134,9 @@ room_parkplace = {
 
     "exits": {"north": {"name": "North Road", "cost": "0"}, "west": {"name": "Cathays Park", "cost": "0"}, "south": {"name": "Pryzm", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "character": []
 }
 
 room_cathayspark = {
@@ -126,7 +146,9 @@ room_cathayspark = {
 
     "exits": {"east": {"name": "Park Place", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "person": characters['homeless_man']
 }
 
 room_pryzm = {
@@ -136,7 +158,9 @@ room_pryzm = {
 
     "exits": {"north": {"name": "Park Place", "cost": "0"}},
 
-    "items": []
+    "items": [],
+
+    "person": characters['bouncer']
 } 
     
 
