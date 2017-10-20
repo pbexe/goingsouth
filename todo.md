@@ -1,1 +1,3 @@
-- [ ] Make battles more exciting 
+- [ ] Make battles more exciting
+- [ ] Make the tier system for attacks work
+- [ ] Build the TUI
