@@ -114,7 +114,7 @@ item_chicken = {
     "feed_value" : 20
 }
 item_mixed_grill = {
-    "id": "mixed_grill",
+    "id": "mixed grill",
 
     "name": "a mixed grill",
 
