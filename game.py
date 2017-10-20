@@ -22,7 +22,7 @@ def print_ascii(file_name):
     When calling the func, the format of the argument should be "filename.txt"
     """
 
-    with open(file_name) as f:
+    with open("./ascii/" + file_name) as f:
 
         while True:
             line = f.readline()
