@@ -9,7 +9,6 @@ import os
 import sys
 import time
 import math
-import winsound
 import random
 
 gameover = False
