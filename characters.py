@@ -43,7 +43,7 @@ characters = {
   },
   "bouncer": {
     "name": "Bouncer",
-    "atack speed": 20
+    "atack speed": 20,
     "health": 180,
     "abilities": [
       ABILITIES['bottle'],
