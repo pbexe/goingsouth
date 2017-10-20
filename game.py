@@ -174,7 +174,10 @@ def print_menu(exits, room_items, inv_items):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for item in room_items:
-        print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
+        if item["cost"] != "":
+            print("BUY " + item['id'].upper() + " to by the " + item['name'] + "for £" + str(item['cost']) +" .")
+        else:
+            print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
         print("DROP " + item['id'].upper() + " to drop your " + item['name'] + ".")
     for item in inv_items:
@@ -231,14 +234,39 @@ def execute_take(item_id):
     for index, item in enumerate(current_room['items']):
         if item['id'] == item_id:
             found = True
-            if item == item_money:
-                money += 10
-                del current_room['items'][index]
-            elif calculate_inventory_mass() + item['mass'] <= 3:
+            if item['cost'] == "":            
+                if item == item_money:
+                    money += 10
+                    del current_room['items'][index]
+                elif calculate_inventory_mass() + item['mass'] <= 3:
+                    inventory.append(item)
+                    del current_room['items'][index]
+                else:
+                    print("You cannot carry any more")
+            else:
+                print("You can't take that, that would be stealing!")
+    if found == False:
+        print("You cannot take that")
+
+def execute_buy(item_id):
+    """This function takes an item_id as an argument and moves this item from the
+    list of items in the current room to the player's inventory. However, if
+    there is no such item in the room, this function prints
+    "You cannot take that."
+    """
+    found = False
+    global inventory
+    global current_room
+    global money
+    for index, item in enumerate(current_room['items']):
+        if item['id'] == item_id:
+            found = True
+            if calculate_inventory_mass() + item['mass'] <= 3 and money - item["cost"] >= 0:
                 inventory.append(item)
                 del current_room['items'][index]
+                money -= item["cost"]
             else:
-                print("You cannot carry any more")
+                print("You can't afford that" if money- item["cost"] < 0 else "You can't carry that")
     if found == False:
         print("You cannot take that")
 
@@ -317,6 +345,12 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+
+    elif command[0] == "buy":
+        if len(command) > 1:
+            execute_buy(command[1])
+        else:
+            print("Buy what?")
 
     else:
         print("This makes no sense.")

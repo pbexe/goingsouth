@@ -11,7 +11,9 @@ item_money = {
 
     "mass" : 0.05,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
     
 }
 
@@ -28,7 +30,9 @@ item_id = {
 
     "mass" : 0.2,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
 }
 
 item_mobile = {
@@ -44,7 +48,9 @@ item_mobile = {
 
     "mass" : 0.5,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
     
 }
 
@@ -61,7 +67,9 @@ item_beer = {
 
     "mass" : 0.6,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
 }
 
 item_vodka = {
@@ -77,7 +85,9 @@ item_vodka = {
 
     "mass" : 0.2,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
 }
 
 item_shoes = {
@@ -93,7 +103,9 @@ item_shoes = {
 
     "mass" : 0,
 
-    "feed_value" : 1
+    "feed_value" : 1,
+
+    "cost" : ""
 }
 #Fattoushian Cusine
 item_chicken = {
