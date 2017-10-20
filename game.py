@@ -10,6 +10,7 @@ import sys
 import time
 import math
 import winsound
+import random
 
 gameover = False
 gamecompleted = False
@@ -226,11 +227,14 @@ def execute_take(item_id):
     found = False
     global inventory
     global current_room
+    global money
     for index, item in enumerate(current_room['items']):
         if item['id'] == item_id:
             found = True
-            if item
-            if calculate_inventory_mass() + item['mass'] <= 3:
+            if item == item_money:
+                money += 10
+                del current_room['items'][index]
+            elif calculate_inventory_mass() + item['mass'] <= 3:
                 inventory.append(item)
                 del current_room['items'][index]
             else:
@@ -384,6 +388,7 @@ def battle(character):
             else:
                 print("Invalid attack")
     clear_screen()
+    # You pick up their items
     inventory.extend(character['items'])
     return character
     
