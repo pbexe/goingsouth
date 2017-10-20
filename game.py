@@ -5,18 +5,22 @@ from player import *
 from items import *
 from gameparser import *
 from abilities import ABILITIES
+import os
 import sys
 import time
 import math
 import winsound
+import random
 
 gameover = False
 gamecompleted = False
 
 def print_ascii(file_name):
-    # This function print out contents from a txt file each char at time.
-    # The parameter file_name is type string.
-    # When calling the func, the format of the argument should be "filename.txt"
+    """
+    This function print out contents from a txt file each char at time.
+    The parameter file_name is type string.
+    When calling the func, the format of the argument should be "filename.txt"
+    """
 
     with open(file_name) as f:
 
@@ -27,7 +31,7 @@ def print_ascii(file_name):
             else:
                 for char in line:
                     sys.stdout.write(char)
-                    time.sleep(0.03)
+                    time.sleep(0.0001)
                     sys.stdout.flush()
 
 
@@ -39,7 +43,7 @@ def add_ability(substance=False):
     """
     for item in ABILITIES:
         if item not in player_abilities:
-            player_abilities.append(item)
+            player_abilities.append(ABILITIES[item])
             break
 
 
@@ -170,7 +174,10 @@ def print_menu(exits, room_items, inv_items):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for item in room_items:
-        print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
+        if item["cost"] != "":
+            print("BUY " + item['id'].upper() + " to by the " + item['name'] + "for £" + str(item['cost']) +" .")
+        else:
+            print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
         print("DROP " + item['id'].upper() + " to drop your " + item['name'] + ".")
     for item in inv_items:
@@ -200,6 +207,8 @@ def execute_go(direction):
     global current_room
     if direction in current_room['exits']:
         current_room = rooms[current_room['exits'][direction]['name']]
+        if 'person' in current_room:
+            current_room['person'] = battle(current_room['person'])
     else:
         print("You cannot go there.")
 
@@ -221,14 +230,43 @@ def execute_take(item_id):
     found = False
     global inventory
     global current_room
+    global money
     for index, item in enumerate(current_room['items']):
         if item['id'] == item_id:
             found = True
-            if calculate_inventory_mass() + item['mass'] <= 3:
+            if item['cost'] == "":            
+                if item == item_money:
+                    money += 10
+                    del current_room['items'][index]
+                elif calculate_inventory_mass() + item['mass'] <= 3:
+                    inventory.append(item)
+                    del current_room['items'][index]
+                else:
+                    print("You cannot carry any more")
+            else:
+                print("You can't take that, that would be stealing!")
+    if found == False:
+        print("You cannot take that")
+
+def execute_buy(item_id):
+    """This function takes an item_id as an argument and moves this item from the
+    list of items in the current room to the player's inventory. However, if
+    there is no such item in the room, this function prints
+    "You cannot take that."
+    """
+    found = False
+    global inventory
+    global current_room
+    global money
+    for index, item in enumerate(current_room['items']):
+        if item['id'] == item_id:
+            found = True
+            if calculate_inventory_mass() + item['mass'] <= 3 and money - item["cost"] >= 0:
                 inventory.append(item)
                 del current_room['items'][index]
+                money -= item["cost"]
             else:
-                print("You cannot carry any more")
+                print("You can't afford that" if money- item["cost"] < 0 else "You can't carry that")
     if found == False:
         print("You cannot take that")
 
@@ -308,6 +346,12 @@ def execute_command(command):
         else:
             print("Drop what?")
 
+    elif command[0] == "buy":
+        if len(command) > 1:
+            execute_buy(command[1])
+        else:
+            print("Buy what?")
+
     else:
         print("This makes no sense.")
 
@@ -343,9 +387,58 @@ def move(exits, direction):
 
 
 def battle(character):
+    global health
     if character['health'] <= 0:
-        return
+        return character
+    clear_screen()
+    print_ascii('battle.txt')
     print("A wild " + character['name'] + " has appeared")
+    if len(player_abilities) == 0:
+        print("You are not yet drunk enough to fight " + character['name'] + ". You must find alcohol in order to fight them.")
+        print("Press ENTER to continue")
+        input()
+        clear_screen()
+        return character
+    # Main battle loop
+    while character['health'] > 0:
+        print("========================")
+        print(character['name'].upper() + ":")
+        print("Health: " + str(character['health']) + "hp")
+        print("Abilities: " + ", ".join([item['name'] for item in character['abilities']]))
+        print("========================")
+        print("YOU:")
+        print("Health: " + str(health))
+        print("Abilities: " + ", ".join([item['name'] for item in player_abilities]))
+        print("========================")
+        print("\nYour turn to attack:")
+        # Print the attacks
+        for index, attack in enumerate(player_abilities):
+            print(str(index + 1) + ". " + attack['name'])
+        # Get the attack input
+        while True:
+            attack = int(input("> ")) - 1
+            if player_abilities[attack]:
+                character['health'] -= player_abilities[attack]['damage']
+                print("You did "+ str(player_abilities[attack]['damage']) + " damage")
+                break
+            else:
+                print("Invalid attack")
+        # If they are still alive
+        if character['health'] > 0:
+            enemy_attack = random.choice(character['abilities'])
+            health -= enemy_attack['damage']
+            print("They did "+ str(player_abilities[attack]['damage']) + " damage")
+            # If you dead
+            if health <= 0:
+                return character
+    clear_screen()
+    # You pick up their items
+    inventory.extend(character['items'])
+    print("You picked up " + list_of_items(character['items']))
+    input("Press ENTER to continue")
+    clear_screen()
+    return character
+    
 
 def game_over():
     if gameover == True:
@@ -362,23 +455,28 @@ def cheat_checker(code):
         money += 1000
         print("You have been given £1000 for this entering this code.")
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # This is the entry point of our program
 def main():
+    clear_screen()
     print("You are about to embark on your journey. Press enter to begin")
     cheat_code = input()
     cheat_checker(cheat_code)
+    clear_screen()
     # Main game loop
     while gameover == False or gamecompleted == False:
-        if 'person' in current_room:
-            current_room['person'] = battle(current_room['person'])
         # Display game status (room description, inventory etc.)
         print_room(current_room)
-        print("You are currently carrying " +("no money" if money == 0 else ("£" + str(money)))+".\n")
+        print("You are currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
+        # Clear the screen
+        clear_screen()
         # Execute the player's command
         execute_command(command)
 

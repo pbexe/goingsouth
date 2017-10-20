@@ -1,0 +1,19 @@
+BBBBBBBBBBBBBBBBB                             tttt               tttt          lllllll                      !!! 
+B::::::::::::::::B                         ttt:::t            ttt:::t          l:::::l                     !!:!!
+B::::::BBBBBB:::::B                        t:::::t            t:::::t          l:::::l                     !:::!
+BB:::::B     B:::::B                       t:::::t            t:::::t          l:::::l                     !:::!
+  B::::B     B:::::B  aaaaaaaaaaaaa  ttttttt:::::tttttttttttttt:::::ttttttt     l::::l     eeeeeeeeeeee    !:::!
+  B::::B     B:::::B  a::::::::::::a t:::::::::::::::::tt:::::::::::::::::t     l::::l   ee::::::::::::ee  !:::!
+  B::::BBBBBB:::::B   aaaaaaaaa:::::at:::::::::::::::::tt:::::::::::::::::t     l::::l  e::::::eeeee:::::ee!:::!
+  B:::::::::::::BB             a::::atttttt:::::::tttttttttttt:::::::tttttt     l::::l e::::::e     e:::::e!:::!
+  B::::BBBBBB:::::B     aaaaaaa:::::a      t:::::t            t:::::t           l::::l e:::::::eeeee::::::e!:::!
+  B::::B     B:::::B  aa::::::::::::a      t:::::t            t:::::t           l::::l e:::::::::::::::::e !:::!
+  B::::B     B:::::B a::::aaaa::::::a      t:::::t            t:::::t           l::::l e::::::eeeeeeeeeee  !!:!!
+  B::::B     B:::::Ba::::a    a:::::a      t:::::t    tttttt  t:::::t    tttttt l::::l e:::::::e            !!! 
+BB:::::BBBBBB::::::Ba::::a    a:::::a      t::::::tttt:::::t  t::::::tttt:::::tl::::::le::::::::e               
+B:::::::::::::::::B a:::::aaaa::::::a      tt::::::::::::::t  tt::::::::::::::tl::::::l e::::::::eeeeeeee   !!! 
+B::::::::::::::::B   a::::::::::aa:::a       tt:::::::::::tt    tt:::::::::::ttl::::::l  ee:::::::::::::e  !!:!!
+BBBBBBBBBBBBBBBBB     aaaaaaaaaa  aaaa         ttttttttttt        ttttttttttt  llllllll    eeeeeeeeeeeeee   !!! 
+
+
+
