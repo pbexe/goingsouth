@@ -421,6 +421,7 @@ def battle(character):
         input()
         clear_screen()
         return character
+    #pls check that:
     for player_attack in character["attack speed"]:
         if player_attack >= character["attack speed"]:
             print ("YOU ARE FIRST TO ATTACK")
