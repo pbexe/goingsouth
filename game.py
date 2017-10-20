@@ -5,6 +5,7 @@ from player import *
 from items import *
 from gameparser import *
 from abilities import ABILITIES
+import os
 import sys
 import time
 import math
@@ -29,7 +30,7 @@ def print_ascii(file_name):
             else:
                 for char in line:
                     sys.stdout.write(char)
-                    time.sleep(0.03)
+                    time.sleep(0.0005)
                     sys.stdout.flush()
 
 
@@ -41,7 +42,7 @@ def add_ability(substance=False):
     """
     for item in ABILITIES:
         if item not in player_abilities:
-            player_abilities.append(item)
+            player_abilities.append(ABILITIES[item])
             break
 
 
@@ -202,6 +203,8 @@ def execute_go(direction):
     global current_room
     if direction in current_room['exits']:
         current_room = rooms[current_room['exits'][direction]['name']]
+        if 'person' in current_room:
+            current_room['person'] = battle(current_room['person'])
     else:
         print("You cannot go there.")
 
@@ -345,19 +348,42 @@ def move(exits, direction):
 
 
 def battle(character):
+    global health
     if character['health'] <= 0:
-        return
+        return character
+    clear_screen()
+    print_ascii('battle.txt')
     print("A wild " + character['name'] + " has appeared")
     if len(player_abilities) == 0:
         print("You are not yet drunk enough to fight " + character['name'] + ". You must find alcohol in order to fight them.")
-        return
+        print("Press ENTER to continue")
+        input()
+        clear_screen()
+        return character
     # Main battle loop
     while character['health'] > 0:
         print("========================")
         print(character['name'].upper() + ":")
-        print("Health: " + str(character))
+        print("Health: " + str(character['health']) + "hp")
         print("Abilities: " + ", ".join([item['name'] for item in character['abilities']]))
         print("========================")
+        print("YOU:")
+        print("Health: " + str(health))
+        print("Abilities: " + ", ".join([item['name'] for item in player_abilities]))
+        print("========================")
+
+        print("\nYour turn to attack:")
+        for index, attack in enumerate(player_abilities):
+            print(str(index + 1) + ". " + attack['name'])
+        while True:
+            attack = int(input("> ")) - 1
+            if player_abilities[attack]:
+                character['health'] -= player_abilities[attack]['damage']
+                break
+            else:
+                print("Invalid attack")
+    clear_screen()
+    return character
     
 
 def game_over():
@@ -375,23 +401,28 @@ def cheat_checker(code):
         money += 1000
         print("You have been given £1000 for this entering this code.")
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # This is the entry point of our program
 def main():
+    clear_screen()
     print("You are about to embark on your journey. Press enter to begin")
     cheat_code = input()
     cheat_checker(cheat_code)
+    clear_screen()
     # Main game loop
     while gameover == False or gamecompleted == False:
-        if 'person' in current_room:
-            current_room['person'] = battle(current_room['person'])
         # Display game status (room description, inventory etc.)
         print_room(current_room)
-        print("You are currently carrying " +("no money" if money == 0 else ("£" + str(money)))+".\n")
+        print("You are currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
+        # Clear the screen
+        clear_screen()
         # Execute the player's command
         execute_command(command)
 
