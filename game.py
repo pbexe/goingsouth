@@ -483,10 +483,10 @@ def battle(character):
             print("You defeated " + character['name'] + "!!!")
             break
             # If you dead
-            if health <= 0:
-                return character
-                gameover = True
-                game_over()
+        if health <= 0:
+            gameover = True
+            game_over()
+            return character
             
     clear_screen()
     # You pick up their items
@@ -500,6 +500,7 @@ def battle(character):
 def game_over():
     if gameover == True:
         print_ascii("gameover.txt")
+        restart_game()
 
 def game_complete():
     if gamecompleted == True:
@@ -514,6 +515,10 @@ def cheat_checker(code):
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def restart_game():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 
 # This is the entry point of our program
