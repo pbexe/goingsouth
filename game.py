@@ -82,7 +82,9 @@ def print_room_items(room):
     for item in room['items']:
         items.append(item)
     if len(room['items']) > 0:
-        print("There is " + list_of_items(items) + " here.\n")
+        print("There is as " + list_of_items(items) + " here.\n")
+    else:
+        print("There are no items here!")
 
 
 def print_inventory_items(items):
@@ -165,7 +167,7 @@ def print_menu(exits, room_items, inv_items):
 
     for item in room_items:
         if item["cost"] != "":
-            print("BUY " + item['id'].upper() + " to by the " + item['name'] + "for £" + str(item['cost']) +" .")
+            print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + str(item['cost']) +" .")
         else:
             print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:

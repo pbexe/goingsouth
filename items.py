@@ -57,7 +57,7 @@ item_mobile = {
 item_beer = {
     "id": "beer",
 
-    "name": "a bottle of beer",
+    "name": "bottle of beer",
 
     "description": "an ice cold refreshing Tesco everday value beer.",
     
@@ -75,7 +75,7 @@ item_beer = {
 item_vodka = {
     "id": "vodka",
 
-    "name": "a shot of vodka",
+    "name": "shot of vodka",
 
     "description": "a slightly warm and suspicious shot of vodka.",
     
@@ -111,7 +111,7 @@ item_shoes = {
 item_chicken = {
     "id": "chicken",
 
-    "name": "a chicken shish",
+    "name": "chicken shish",
 
     "description": "A traditional dish, specially marinated cubes of chicken brochette & grilled.",
     
@@ -128,7 +128,7 @@ item_chicken = {
 item_mixed_grill = {
     "id": "mixed grill",
 
-    "name": "a mixed grill",
+    "name": "mixed grill",
 
     "description": "Shish chicken, lamb meshwi & lamb kofte in one serving. A real bargain!",
     
@@ -145,7 +145,7 @@ item_mixed_grill = {
 item_cheeseburger = {
     "id": "cheeseburger",
 
-    "name": "a cheeseburger",
+    "name": "cheeseburger",
 
     "description": "100% homemade & served with chips, salad & sauce.",
     
@@ -162,7 +162,7 @@ item_cheeseburger = {
 item_sauce = {
     "id": "sauce",
 
-    "name": "a pot of raw sauce",
+    "name": "pot of raw sauce",
 
     "description": "No ketchup, just sauce. Raw sauce.",
     
