@@ -267,7 +267,7 @@ def execute_buy(item_id):
             else:
                 print("You can't afford that" if money- item["cost"] < 0 else "You can't carry that")
     if found == False:
-        print("You cannot take that")
+        print("You cannot buy that")
 
 
 def execute_consume(item_id):
@@ -318,8 +318,9 @@ def execute_inspect(item_id):
     for index, item in enumerate(inventory):
         if item['id'] == item_id:
             found = True
-            print(Item['description'])
-            del inventory[index]
+            print(item["name"].upper() + ": " + item['description'])
+            time.sleep(4)
+            clear_screen()
     if found == False:
         print("You do not have this item")
 
@@ -370,7 +371,7 @@ def execute_command(command):
 
     elif command[0] == "inspect":
         if len(command) > 1:
-            execute_buy(command[1])
+            execute_inspect(command[1])
         else:
             print("Inspect what?")
 
