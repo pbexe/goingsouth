@@ -98,7 +98,7 @@ room_corridor = {
 
     "items": [],
 
-    "person": ['pres_host'],
+    "person": characters['pres_host'],
 
     "ascii_art": "need_ascii.txt"
 
