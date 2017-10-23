@@ -40,8 +40,9 @@ def add_ability(substance=False):
     TODO:
     - Implement substances
     """
+    global player_abilities
     for item in ABILITIES:
-        if item not in player_abilities:
+        if ABILITIES[item] not in player_abilities:
             player_abilities.append(ABILITIES[item])
             break
 
