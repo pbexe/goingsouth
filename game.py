@@ -408,6 +408,8 @@ def move(exits, direction):
 
 def battle(character):
     global health
+    global gameover
+    
     if character['health'] <= 0:
         return character
     clear_screen()
