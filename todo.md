@@ -7,6 +7,7 @@
 - [ ] Make battles more exciting
 - [ ] Make the tier system for attacks work
 - [ ] Build the TUI
+- [ ] When you have a drink, you can then bottle somebody
 
 ## Done
 - [x] make print_ascii function quicker

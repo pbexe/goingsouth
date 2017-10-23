@@ -198,6 +198,7 @@ def execute_go(direction):
     """
     global current_room
     global money
+    global health
 
     move_cost = int(current_room['exits'][direction]['cost'])
     
@@ -213,7 +214,10 @@ def execute_go(direction):
                 choice = input("> ")
                 if choice == "1":
                     print("This taxi journey cost you £{}!".format(move_cost))
-                    money -= move_cost
+                    if money - move_cost < 0:
+                        print("You do not have enough money to do this")
+                    else:
+                        money -= move_cost
                     break
                 elif choice == "2":
                     print("This walk took away {}hp!".format(move_cost))
