@@ -498,7 +498,7 @@ def main():
         # Display game status (room description, inventory etc.)
         print_ascii(current_room["ascii_art"])
         print_room(current_room)
-        print("You are currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
+        print("You currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player

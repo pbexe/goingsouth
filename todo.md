@@ -1,7 +1,6 @@
 ## Important
 - [ ] Correct grammar when consuming an item
 - [ ] Correct names of items and rooms i.e. consuming, for direction
-- [ ] make print_ascii function quicker
 - [ ] Charge either health or money for long travels
 
 ## Improvements
@@ -10,4 +9,5 @@
 - [ ] Build the TUI
 
 ## Done
+- [x] make print_ascii function quicker
 - [x] fix add_ability to add a random ability other than "Drunken Insult"
