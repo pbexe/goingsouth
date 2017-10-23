@@ -21,15 +21,7 @@ def print_ascii(file_name):
     """
 
     with open("./ascii/" + file_name) as f:
-
-        while True:
-            line = f.readline()
-            if not line:
-                break
-            else:
-                for char in line:
-                    print(char, end = "")
-                    sys.stdout.flush()
+        print(f.read())
 
 
 def add_ability(substance=False):

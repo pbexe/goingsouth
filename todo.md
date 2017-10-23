@@ -4,7 +4,6 @@
 - [ ] make print_ascii function quicker
 - [ ] Charge either health or money for long travels
 
-
 ## Improvements
 - [ ] Make battles more exciting
 - [ ] Make the tier system for attacks work

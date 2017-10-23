@@ -25,8 +25,6 @@ room_yourroom = {
 
     "items": [],
 
-    "person": [],
-
     "ascii_art": "room.txt"
 }
 
