@@ -199,15 +199,28 @@ def execute_go(direction):
     global current_room
     global money
 
-    move_cost = current_room['exits'][direction]['cost']
+    move_cost = int(current_room['exits'][direction]['cost'])
     
     if direction in current_room['exits']:
         current_room = rooms[current_room['exits'][direction]['name']]
         if 'person' in current_room:
             current_room['person'] = battle(current_room['person'])
-            if int(move_cost) != 0:
-                print("This taxi journey cost you £10!")
-                money = money - 10
+        if int(move_cost) != 0:
+            print("This is a long way! You can either walk or take a taxi. Please choose an option:")
+            print("1. Take a taxi for £{}".format(move_cost))
+            print("2. Walk and lose {}hp".format(move_cost))
+            while 1:
+                choice = input("> ")
+                if choice == "1":
+                    print("This taxi journey cost you £{}!".format(move_cost))
+                    money -= move_cost
+                    break
+                elif choice == "2":
+                    print("This walk took away {}hp!".format(move_cost))
+                    health -= move_cost
+                    break
+                else:
+                    print("Invalid Input")
     else:
         print("You cannot go there.")
 
@@ -318,7 +331,7 @@ def execute_inspect(item_id):
     for index, item in enumerate(inventory):
         if item['id'] == item_id:
             found = True
-            print(Item['description'])
+            print(item['description'])
             del inventory[index]
     if found == False:
         print("You do not have this item")
