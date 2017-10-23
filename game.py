@@ -195,10 +195,17 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
     """
     global current_room
+    global money
+
+    move_cost = current_room['exits'][direction]['cost']
+    
     if direction in current_room['exits']:
         current_room = rooms[current_room['exits'][direction]['name']]
         if 'person' in current_room:
             current_room['person'] = battle(current_room['person'])
+            if int(move_cost) != 0:
+                print("This taxi journey cost you £10!")
+                money = money - 10
     else:
         print("You cannot go there.")
 
