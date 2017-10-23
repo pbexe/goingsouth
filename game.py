@@ -10,7 +10,6 @@ import sys
 import time
 import math
 import random
-
 gameover = False
 gamecompleted = False
 
@@ -29,8 +28,7 @@ def print_ascii(file_name):
                 break
             else:
                 for char in line:
-                    sys.stdout.write(char)
-                    time.sleep(0.0000001)
+                    print(char, end = "")
                     sys.stdout.flush()
 
 
@@ -268,7 +266,7 @@ def execute_buy(item_id):
             else:
                 print("You can't afford that" if money- item["cost"] < 0 else "You can't carry that")
     if found == False:
-        print("You cannot buy that")
+        print("You cannot take that")
 
 
 def execute_consume(item_id):
@@ -319,9 +317,8 @@ def execute_inspect(item_id):
     for index, item in enumerate(inventory):
         if item['id'] == item_id:
             found = True
-            print(item["name"].upper() + ": " + item['description'])
-            time.sleep(4)
-            clear_screen()
+            print(Item['description'])
+            del inventory[index]
     if found == False:
         print("You do not have this item")
 
@@ -372,7 +369,7 @@ def execute_command(command):
 
     elif command[0] == "inspect":
         if len(command) > 1:
-            execute_inspect(command[1])
+            execute_buy(command[1])
         else:
             print("Inspect what?")
 
@@ -412,6 +409,8 @@ def move(exits, direction):
 
 def battle(character):
     global health
+    global gameover
+    
     if character['health'] <= 0:
         return character
     clear_screen()
@@ -464,6 +463,7 @@ def battle(character):
             # If you dead
             if health <= 0:
                 return character
+                gameover = True
                 game_over()
             
     clear_screen()
