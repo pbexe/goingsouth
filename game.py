@@ -458,11 +458,15 @@ def battle(character):
             print(str(index + 1) + ". " + attack['name'])
         # Get the attack input
         while True:
-            attack = int(input("> ")) - 1
-            if player_abilities[attack]:
-                character['health'] -= player_abilities[attack]['damage']
-                print("You did "+ str(player_abilities[attack]['damage']) + " damage")
-                break
+            attack = input("> ")
+            if attack:
+                try:
+                    attack = int(attack) -1
+                    character['health'] -= player_abilities[attack]['damage']
+                    print("You did "+ str(player_abilities[attack]['damage']) + " damage")
+                    break
+                except (IndexError, ValueError) as e:
+                    print("Invalid attack")
             else:
                 print("Invalid attack")
 
