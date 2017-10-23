@@ -3,7 +3,7 @@ from items import *
 characters = {
   "flat_mate": {
     "name": "Flat Mate",
-    "attack speed":20,
+    "attack speed": 20,
     "health": 100,
     "abilities": [
       ABILITIES['drunken_insult'],
@@ -16,7 +16,7 @@ characters = {
   },
   "pres_host": {
     "name": "Pres Host",
-    "attack speed": 25,
+    "attack speed": 30,
     "health": 130,
     "abilities": [
       ABILITIES['dance'],
@@ -43,7 +43,7 @@ characters = {
   },
   "bouncer": {
     "name": "Bouncer",
-    "attack speed": 20,
+    "attack speed": 40,
     "health": 180,
     "abilities": [
       ABILITIES['bottle'],

@@ -30,7 +30,7 @@ def print_ascii(file_name):
             else:
                 for char in line:
                     sys.stdout.write(char)
-                    time.sleep(0.0001)
+                    time.sleep(0.0000001)
                     sys.stdout.flush()
 
 
@@ -421,12 +421,11 @@ def battle(character):
         input()
         clear_screen()
         return character
-    #pls check that:
-    for player_attack in character["attack speed"]:
-        if player_attack >= character["attack speed"]:
+    #checks if payers attack speed found in player.py is greater than or equal to character attack speed
+    if attack_speed >= character["attack speed"]:
             print ("YOU ARE FIRST TO ATTACK")
-        else:
-            print("YOUR OPPONENT GOES FIRST")
+    else:
+            print("YOUR OPPONENT GOES FIRST") 
     # Main battle loop
     while character['health'] > 0:
         print("========================")
@@ -435,7 +434,7 @@ def battle(character):
         print("Abilities: " + ", ".join([item['name'] for item in character['abilities']]))
         print("========================")
         print("YOU:")
-        print("Health: " + str(health))
+        print("Health: " + str(health) + "hp")
         print("Abilities: " + ", ".join([item['name'] for item in player_abilities]))
         print("========================")
         print("\nYour turn to attack:")
@@ -451,14 +450,20 @@ def battle(character):
                 break
             else:
                 print("Invalid attack")
+
         # If they are still alive
         if character['health'] > 0:
             enemy_attack = random.choice(character['abilities'])
             health -= enemy_attack['damage']
-            print("They did "+ str(player_abilities[attack]['damage']) + " damage")
+            print("They did "+ str(enemy_attack['damage']) + " damage")
+        else:
+            print("You defeated " + character['name'] + "!!!")
+            break
             # If you dead
             if health <= 0:
                 return character
+                game_over()
+            
     clear_screen()
     # You pick up their items
     inventory.extend(character['items'])

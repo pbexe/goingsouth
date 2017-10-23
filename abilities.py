@@ -38,5 +38,5 @@ ABILITIES = {
         "name": "Spike their drink",
         "damage": 50,
         "tier": 2
-    },
+    }
 }

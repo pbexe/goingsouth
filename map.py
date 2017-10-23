@@ -10,9 +10,9 @@ room_unihalls = {
 
     "items": [],
 
-    "person": characters['flat_mate'],
+    "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 }
 
 room_yourroom = {
@@ -25,7 +25,7 @@ room_yourroom = {
 
     "items": [],
 
-    "character": [],
+    "person": [],
 
     "ascii_art": "room.txt"
 }
@@ -37,7 +37,7 @@ room_fridge = {
 
     "exits": {"west": {"name": "Uni Halls", "cost": "0"}},
 
-    "items": [item_beer],
+    "items": [item_beer, item_vodka],
 
     "character": [],
 
@@ -55,7 +55,7 @@ room_tygwynroad = {
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
     
 }
 
@@ -68,7 +68,7 @@ room_friendsroom = {
 
     "items": [item_money],
 
-    "character": [],
+    "person": characters['flat_mate'],
 
     "ascii_art": "room.txt"
 
@@ -79,13 +79,13 @@ room_pres = {
 
     "description": "God, Talybont North is a complete dive. You can barely fit 6 people in the kitchen.",
 
-    "exits": {"west": {"name": "Corridor", "cost": "0"}, "south": {"name": "North Road", "cost": "0"}},
+    "exits": {"north": {"name": "Ty-Gwyn road", "cost": "0"}, "west": {"name": "Corridor", "cost": "0"}, "south": {"name": "North Road", "cost": "0"}},
 
     "items": [item_vodka],
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -98,9 +98,9 @@ room_corridor = {
 
     "items": [],
 
-    "character": ['pres_host'],
+    "person": ['pres_host'],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -116,7 +116,7 @@ room_preshostroom = {
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -131,7 +131,7 @@ room_northroad = {
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 }
 
 room_fattoush = {
@@ -145,7 +145,7 @@ room_fattoush = {
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -160,7 +160,7 @@ room_parkplace = {
 
     "character": [],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -175,7 +175,7 @@ room_cathayspark = {
 
     "person": characters['homeless_man'],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 }
 
@@ -190,7 +190,7 @@ room_pryzm = {
 
     "person": characters['bouncer'],
 
-    "ascii_art": ""
+    "ascii_art": "need_ascii.txt"
 
 } 
     
