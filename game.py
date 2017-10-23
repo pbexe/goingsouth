@@ -10,7 +10,6 @@ import sys
 import time
 import math
 import random
-D
 gameover = False
 gamecompleted = False
 
