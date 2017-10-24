@@ -217,7 +217,7 @@ def execute_go(direction):
         current_room = rooms[current_room['exits'][direction]['name']]
         if 'person' in current_room:
             current_room['person'] = battle(current_room['person'])
-        if current_room == "Ty-Gwyn road":
+        if int(move_cost) == 10:
             print("This is a long way! You can either walk or take a taxi. Please choose an option:")
             print("1. Take a taxi for £{}".format(move_cost))
             print("2. Walk and lose {}hp".format(move_cost))
