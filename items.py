@@ -14,7 +14,7 @@ item_money = {
     "feed_value" : 1,
 
     "cost" : ""
-    
+
 }
 
 item_id = {
@@ -37,13 +37,13 @@ item_id = {
 
 item_mobile = {
     "id": "mobile",
-    
+
     "name": "mobile phone",
-    
+
     "description": "sadsad.",
-    
+
     "is_alcohol": False,
-    
+
     "is_substance": False,
 
     "mass" : 0.5,
@@ -51,7 +51,7 @@ item_mobile = {
     "feed_value" : 1,
 
     "cost" : ""
-    
+
 }
 
 item_beer = {
@@ -60,7 +60,7 @@ item_beer = {
     "name": "bottle of beer",
 
     "description": "an ice cold refreshing Tesco everday value beer.",
-    
+
     "is_alcohol": True,
 
     "is_substance": False,
@@ -78,7 +78,7 @@ item_vodka = {
     "name": "shot of vodka",
 
     "description": "a slightly warm and suspicious shot of vodka.",
-    
+
     "is_alcohol": True,
 
     "is_substance": False,
@@ -95,8 +95,8 @@ item_shoes = {
 
     "name": "a pair of shoes",
 
-    "description": "these shoes reek, but you'll need them to get into the club.",
-    
+    "description": "a pair of shoes that reek, but you'll need them to get into the club.",
+
     "is_alcohol": False,
 
     "is_substance": False,
@@ -113,8 +113,8 @@ item_chicken = {
 
     "name": "chicken shish",
 
-    "description": "A traditional dish, specially marinated cubes of chicken brochette & grilled.",
-    
+    "description": "a traditional dish, specially marinated cubes of chicken brochette & grilled.",
+
     "is_alcohol": False,
 
     "is_substance": True,
@@ -126,12 +126,12 @@ item_chicken = {
     "feed_value" : 20
 }
 item_mixed_grill = {
-    "id": "mixed grill",
+    "id": "mixed=grill",
 
-    "name": "mixed grill",
+    "name": "mixed=grill",
 
     "description": "Shish chicken, lamb meshwi & lamb kofte in one serving. A real bargain!",
-    
+
     "is_alcohol": False,
 
     "is_substance": True,
@@ -147,8 +147,8 @@ item_cheeseburger = {
 
     "name": "cheeseburger",
 
-    "description": "100% homemade & served with chips, salad & sauce.",
-    
+    "description": "100% homemade cheeseburger, served with chips, salad & sauce.",
+
     "is_alcohol": False,
 
     "is_substance": True,
@@ -164,8 +164,8 @@ item_sauce = {
 
     "name": "pot of raw sauce",
 
-    "description": "No ketchup, just sauce. Raw sauce.",
-    
+    "description": "pot of sauce. No ketchup, just sauce. Raw sauce.",
+
     "is_alcohol": False,
 
     "is_substance": True,
@@ -176,9 +176,3 @@ item_sauce = {
 
     "feed_value" : 99
 }
-
-
-
-
-
-

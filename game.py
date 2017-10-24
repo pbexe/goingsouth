@@ -60,11 +60,11 @@ def consume_item(item):
         return True
     elif item['is_alcohol']:
         add_ability()
-        print("You drank the " + item['name'])
+        print("You drank the " + item['name']+ "\n")
         return True
     elif item['is_substance']:
         add_ability(True)
-        print("You ate the " + item['name'])
+        print("You ate the " + item['name']+ "\n")
         add_health(item)
         return True
     else:
@@ -224,17 +224,17 @@ def execute_go(direction):
             while 1:
                 choice = input("> ")
                 if choice == "1":
-                    print("This taxi journey cost you £{}!".format(move_cost))
+                    print("This taxi journey cost you £{}!".format(move_cost)+"\n")
                     money -= move_cost
                     break
                 elif choice == "2":
-                    print("This walk took away {}hp!".format(move_cost))
+                    print("This walk took away {}hp!".format(move_cost)+"\n")
                     health -= move_cost
                     break
                 else:
-                    print("Invalid Input")
+                    print("Invalid Input\n")
         else:
-            print("This walk took away {}hp!".format(move_cost))
+            print("This walk took away {}hp!".format(move_cost)+"\n")
             health -= move_cost
 
     else:
@@ -511,6 +511,7 @@ def battle(character):
 def game_over():
     if gameover == True:
         print_ascii("gameover.txt")
+        time.sleep(5)
         restart_game()
 
 def game_complete():
