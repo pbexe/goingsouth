@@ -23,6 +23,17 @@ def print_ascii(file_name):
     with open("./ascii/" + file_name) as f:
         print(f.read())
 
+def add_health(item):
+    """This function increments the players health if they consume food"""
+
+    global health
+
+    if item['feed_value'] + health > 100:
+        health = 100
+    else:
+        health += item['feed_value']
+    return
+
 
 def add_ability(substance=False):
     """
@@ -55,6 +66,7 @@ def consume_item(item):
     elif item['is_substance']:
         add_ability(True)
         print("You ate the " + item['name'])
+        add_health(item)
         return True
     else:
         return False
@@ -535,6 +547,11 @@ def main():
         print_room(current_room)
         print("You currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
+
+        print("\n=======================")
+        print("YOUR HEALTH: %s" % str(health))
+        print("=======================\n")
+
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
