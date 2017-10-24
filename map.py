@@ -6,7 +6,7 @@ room_unihalls = {
 
     "description": "University Halls: slap bang in the middle of nowhere. The only thing going for it the free bus service. Oh, and the close proximity of Roath Park.",
 
-    "exits": {"south": {"name": "Ty-Gwyn road", "cost": "0"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friends Room", "cost": "0"}, "north": {"name": "Your Room", "cost": "0"}},
+    "exits": {"south": {"name": "Ty-Gwyn road", "cost": "10"}, "east": {"name": "Fridge", "cost": "0"}, "west": {"name": "Friends Room", "cost": "0"}, "north": {"name": "Your Room", "cost": "0"}},
 
     "items": [],
 

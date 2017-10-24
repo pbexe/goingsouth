@@ -23,17 +23,6 @@ def print_ascii(file_name):
     with open("./ascii/" + file_name) as f:
         print(f.read())
 
-def add_health(item):
-    """This function increments the players health if they consume food"""
-
-    global health
-
-    if item['feed_value'] + health > 100:
-        health = 100
-    else:
-        health += item['feed_value']
-    return
-
 
 def add_ability(substance=False):
     """
@@ -66,7 +55,6 @@ def consume_item(item):
     elif item['is_substance']:
         add_ability(True)
         print("You ate the " + item['name'])
-        add_health(item)
         return True
     else:
         return False
@@ -218,7 +206,7 @@ def execute_go(direction):
         current_room = rooms[current_room['exits'][direction]['name']]
         if 'person' in current_room:
             current_room['person'] = battle(current_room['person'])
-        if int(move_cost) != 0:
+        if current_room == "Ty-Gwyn road":
             print("This is a long way! You can either walk or take a taxi. Please choose an option:")
             print("1. Take a taxi for £{}".format(move_cost))
             print("2. Walk and lose {}hp".format(move_cost))
@@ -226,10 +214,7 @@ def execute_go(direction):
                 choice = input("> ")
                 if choice == "1":
                     print("This taxi journey cost you £{}!".format(move_cost))
-                    if money - move_cost < 0:
-                        print("You do not have enough money to do this")
-                    else:
-                        money -= move_cost
+                    money -= move_cost
                     break
                 elif choice == "2":
                     print("This walk took away {}hp!".format(move_cost))
@@ -237,6 +222,10 @@ def execute_go(direction):
                     break
                 else:
                     print("Invalid Input")
+        else:
+            print("This walk took away {}hp!".format(move_cost))
+            health -= move_cost
+            
     else:
         print("You cannot go there.")
 
@@ -547,11 +536,6 @@ def main():
         print_room(current_room)
         print("You currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
-
-        print("\n=======================")
-        print("YOUR HEALTH: %s" % str(health))
-        print("=======================\n")
-
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
