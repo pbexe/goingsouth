@@ -25,9 +25,9 @@ def print_ascii(file_name):
 
 def add_health(item):
     """This function increments the players health if they consume food"""
- 
+
     global health
- 
+
     if item['feed_value'] + health > 100:
         health = 100
     else:
@@ -65,7 +65,7 @@ def consume_item(item):
     elif item['is_substance']:
         add_ability(True)
         print("You ate the " + item['name'])
-        add_health(item) 
+        add_health(item)
         return True
     else:
         return False
@@ -113,7 +113,7 @@ def print_room(room):
     is printed in all capitals and framed by blank lines. Then follows the
     description of the room and a blank line again. If there are any items
     in the room, the list of items is printed next followed by a blank line
-    (use print_room_items() for this). 
+    (use print_room_items() for this).
     """
     # Display room name
     print(room["name"].upper()+"\n")
@@ -212,7 +212,7 @@ def execute_go(direction):
     global health
 
     move_cost = int(current_room['exits'][direction]['cost'])
-    
+
     if direction in current_room['exits']:
         current_room = rooms[current_room['exits'][direction]['name']]
         if 'person' in current_room:
@@ -236,9 +236,9 @@ def execute_go(direction):
         else:
             print("This walk took away {}hp!".format(move_cost))
             health -= move_cost
-            
+
     else:
-        print("You cannot go there.")
+        print("You cannot go there."+ "\n")
 
 
 def calculate_inventory_mass():
@@ -262,7 +262,7 @@ def execute_take(item_id):
     for index, item in enumerate(current_room['items']):
         if item['id'] == item_id:
             found = True
-            if item['cost'] == "":            
+            if item['cost'] == "":
                 if item == item_money:
                     money += 10
                     del current_room['items'][index]
@@ -270,11 +270,11 @@ def execute_take(item_id):
                     inventory.append(item)
                     del current_room['items'][index]
                 else:
-                    print("You cannot carry any more")
+                    print("You cannot carry any more"+ "\n")
             else:
-                print("You can't take that, that would be stealing!")
+                print("You can't take that, that would be stealing!"+ "\n")
     if found == False:
-        print("You cannot take that")
+        print("You cannot take that"+ "\n")
 
 def execute_buy(item_id):
     """This function takes an item_id as an argument and moves this item from the
@@ -296,7 +296,7 @@ def execute_buy(item_id):
             else:
                 print("You can't afford that" if money- item["cost"] < 0 else "You can't carry that")
     if found == False:
-        print("You cannot take that")
+        print("You cannot take that"+ "\n")
 
 
 def execute_consume(item_id):
@@ -315,7 +315,7 @@ def execute_consume(item_id):
                 found = True
                 del inventory[index]
     if found == False:
-        print("You cannot consume that")
+        print("You cannot consume that"+ "\n")
 
 
 
@@ -347,8 +347,7 @@ def execute_inspect(item_id):
     for index, item in enumerate(inventory):
         if item['id'] == item_id:
             found = True
-            print(item['description'])
-            del inventory[index]
+            print("This is " + str(item['description'])+ "\n")
     if found == False:
         print("You do not have this item")
 
@@ -399,7 +398,7 @@ def execute_command(command):
 
     elif command[0] == "inspect":
         if len(command) > 1:
-            execute_buy(command[1])
+            execute_inspect(command[1])
         else:
             print("Inspect what?")
 
@@ -440,7 +439,7 @@ def move(exits, direction):
 def battle(character):
     global health
     global gameover
-    
+
     if character['health'] <= 0:
         return character
     clear_screen()
@@ -456,7 +455,7 @@ def battle(character):
     if attack_speed >= character["attack speed"]:
             print ("YOU ARE FIRST TO ATTACK")
     else:
-            print("YOUR OPPONENT GOES FIRST") 
+            print("YOUR OPPONENT GOES FIRST")
     # Main battle loop
     while character['health'] > 0:
         print("========================")
@@ -499,7 +498,7 @@ def battle(character):
             gameover = True
             game_over()
             return character
-            
+
     clear_screen()
     # You pick up their items
     inventory.extend(character['items'])
@@ -507,7 +506,7 @@ def battle(character):
     input("Press ENTER to continue")
     clear_screen()
     return character
-    
+
 
 def game_over():
     if gameover == True:
@@ -523,7 +522,7 @@ def cheat_checker(code):
     global money
     if code == "dollar":
         money += 1000
-        print("You have been given £1000 for this entering this code.")
+        print("You have been given £1000 for this entering this code."+ "\n")
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -548,9 +547,9 @@ def main():
         print("You currently have " +("no money" if money == 0 else ("£" + str(money)))+".\n")
         print_inventory_items(inventory)
 
-        print("\n=======================") 
-        print("YOUR HEALTH: %s" % str(health)) 
-        print("=======================\n") 
+        print("\n=======================")
+        print("YOUR HEALTH: %s" % str(health))
+        print("=======================\n")
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
@@ -568,4 +567,3 @@ def main():
 # See https://docs.python.org/3.4/library/__main__.html for explanation
 if __name__ == "__main__":
     main()
-
