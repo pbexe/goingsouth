@@ -126,9 +126,9 @@ item_chicken = {
     "feed_value" : 20
 }
 item_mixed_grill = {
-    "id": "mixed=grill",
+    "id": "mixedgrill",
 
-    "name": "mixed=grill",
+    "name": "mixed grill",
 
     "description": "Shish chicken, lamb meshwi & lamb kofte in one serving. A real bargain!",
 
@@ -145,7 +145,7 @@ item_mixed_grill = {
 item_cheeseburger = {
     "id": "cheeseburger",
 
-    "name": "cheeseburger",
+    "name": "cheese burger",
 
     "description": "100% homemade cheeseburger, served with chips, salad & sauce.",
 
