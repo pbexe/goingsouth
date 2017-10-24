@@ -12,7 +12,7 @@ room_unihalls = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "unihalls.txt"
 }
 
 room_yourroom = {
@@ -53,7 +53,7 @@ room_tygwynroad = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "tygwynroad.txt"
     
 }
 
@@ -83,7 +83,7 @@ room_pres = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "pres.txt"
 
 }
 
@@ -98,7 +98,7 @@ room_corridor = {
 
     "person": characters['pres_host'],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "corridor.txt"
 
 }
 
@@ -114,7 +114,7 @@ room_preshostroom = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "preshostroom.txt"
 
 }
 
@@ -129,7 +129,7 @@ room_northroad = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "northroad.txt"
 }
 
 room_fattoush = {
@@ -143,7 +143,7 @@ room_fattoush = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "fattoush.txt"
 
 }
 
@@ -158,7 +158,7 @@ room_parkplace = {
 
     "character": [],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "northroad.txt"
 
 }
 
@@ -173,7 +173,7 @@ room_cathayspark = {
 
     "person": characters['homeless_man'],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "cathayspark.txt"
 
 }
 
@@ -188,10 +188,9 @@ room_pryzm = {
 
     "person": characters['bouncer'],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "pryzm.txt"
 
-} 
-    
+}
 
 rooms = {
     "Uni Halls": room_unihalls,
