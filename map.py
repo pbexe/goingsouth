@@ -165,15 +165,15 @@ room_parkplace = {
 room_cathayspark = {
     "name": "Cathays Park",
 
-    "description": "someone needs to add a description",
+    "description": "This is the main university campus and is eerily scary at night",
 
     "exits": {"east": {"name": "Park Place", "cost": "3"}},
 
-    "items": [],
+    "items": [item_sauce],
 
     "person": characters['homeless_man'],
 
-    "ascii_art": "cathayspark.txt"
+    "ascii_art": "need_ascii.txt"
 
 }
 

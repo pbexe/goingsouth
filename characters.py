@@ -36,8 +36,7 @@ characters = {
       ABILITIES['blackmail']
     ],
     'items': [
-      item_shoes,
-      item_sauce
+      item_shoes
     ]
 
   },

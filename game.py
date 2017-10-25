@@ -584,10 +584,11 @@ def helper(help_me):
 
     if help_me == "help":
         print("""
-you must travel through the rooms using the command "go <direction>",
+the objective of the game is to make it into Pryzm without dying. 
+You must travel through the rooms using the command "go <direction>",
 you must drink alcohol to gain abilities to be able to battle other people,
 moving around the map and being in battles reduces health, which can be restored by eating food.
-
+you must battle people in order to gain items so you make it to the club
 """)
 
 

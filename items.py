@@ -162,7 +162,7 @@ item_chicken = {
 
     "feed_value" : 20,
 
-    "cost": ""
+    "cost": 5
 }
 item_mixed_grill = {
     "id": "mixedgrill",
