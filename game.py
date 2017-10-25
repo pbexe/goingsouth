@@ -210,6 +210,7 @@ def execute_go(direction):
     global current_room
     global money
     global health
+    global gameover
 
     move_cost = int(current_room['exits'][direction]['cost'])
     
@@ -239,6 +240,10 @@ def execute_go(direction):
             
     else:
         print("You cannot go there.")
+
+    if health <= 0:
+            gameover = True
+            game_over()
 
 
 def calculate_inventory_mass():
