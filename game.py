@@ -496,11 +496,7 @@ def battle(character):
         input()
         clear_screen()
         return character
-    #checks if payers attack speed found in player.py is greater than or equal to character attack speed
-    if attack_speed >= character["attack speed"]:
-            print ("YOU ARE FIRST TO ATTACK")
-    else:
-            print("YOUR OPPONENT GOES FIRST")
+
     # Main battle loop
     while character['health'] > 0:
         print("========================")
