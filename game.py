@@ -580,8 +580,8 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def restart_game():
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
+    restart = sys.executable
+    os.execl(restart, restart, * sys.argv)
 
 def helper(help_me):
 
