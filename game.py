@@ -94,7 +94,7 @@ def print_room_items(room):
     for item in room['items']:
         items.append(item)
     if len(room['items']) > 0:
-        print("There is as " + list_of_items(items) + " here.\n")
+        print("There is a " + list_of_items(items) + " here.\n")
     else:
         print("There are no items here!")
 
