@@ -179,7 +179,7 @@ def print_menu(exits, room_items, inv_items):
 
     for item in room_items:
         if item["cost"] != "":
-            print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + str(item['cost']) +" .")
+            print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + (str(item['cost']) if str(item['cost'])[-1:] == "5" else (str(item['cost'])+"0")) +".")
         else:
             print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
