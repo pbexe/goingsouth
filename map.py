@@ -173,7 +173,7 @@ room_cathayspark = {
 
     "person": characters['homeless_man'],
 
-    "ascii_art": "need_ascii.txt"
+    "ascii_art": "cathayspark.txt"
 
 }
 
