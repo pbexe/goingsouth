@@ -177,7 +177,6 @@ def print_menu(exits, room_items, inv_items):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for item in room_items:
-        print(current_room)
         if item["cost"] != "" and current_room['name'] == "Fattoush Restaurant" :
             print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + (str(item['cost']) if str(item['cost'])[-1:] == "5" else (str(item['cost'])+"0")) +".")
         else:
