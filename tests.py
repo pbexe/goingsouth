@@ -36,7 +36,7 @@ class TestGameCore(unittest.TestCase):
         with captured_output() as (out, err):
             print_room_items(rooms['Fridge'])
         output = out.getvalue().strip()
-        self.assertEqual(output, 'There is a bottle of beer, shot of vodka here.')
+        self.assertEqual(output, 'There is a bottle of beer, shot of vodka, a block of cheese here.')
 
     def test_inventory_items(self):
         with captured_output() as (out, err):
