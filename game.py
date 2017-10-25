@@ -200,6 +200,16 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
+def has_items(item_name):
+    # a is the last item in the inventory
+    a = inventory[len(inventory) - 1]['id']
+
+    for item in inventory:
+        if item['id'] == item_name:
+            return True
+        elif item['id'] != item_name and item['id'] == a:
+            return False
+
 
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
@@ -225,32 +235,28 @@ def execute_go(direction):
             current_room['person'] = battle(current_room['person'])
         elif current_room['name'] == "Pryzm":
 
-            if len(inventory) == 0:
-                print("You don't have any form of ID on you.")
+            has_shoes = has_items("shoes")
+            has_id = has_items("id")
+            has_money = (True if money > 5 else False)
+
+            if has_shoes == True and has_id == True and has_money == True:
+
+                a = random.randint(0,len(probability)-1)
+                input("Press enter to hand over your ID...")
+                print("The bouncer is thinking...")
+                if probability[a]:
+                    # You managed to get in
+                    print("You managed to trick the bouncer!")
+                    gamecompleted = True
+                    return
+                else:
+                    print ("The bouncer does not approve your ID, fight him!")
+                    current_room['person'] = battle(current_room['person'])
+            else:
+                print("You need a ID, Shoes and Money to enter!")
                 current_room = previous_room
                 return
-            else:
-                # a is the last item in the inventory
-                a = inventory[len(inventory)-1]['id']
 
-                for item in inventory:
-                    
-                    if item['id'] == "id":
-                        a = random.randint(0,len(probability)-1)
-                        input("Press enter to hand over your ID...")
-                        print("The bouncer is thinking...")
-                        if probability[a]:
-                            # You managed to get in
-                            print("You managed to trick the bouncer!")
-                            gamecompleted = True
-                            return
-                        else:
-                            print ("The bouncer does not approve your ID, fight him!")
-                            current_room['person'] = battle(current_room['person'])
-                    elif item['id'] != "id" and item['id'] == a:
-                        print("You don't have any form of ID on you.")
-                        current_room = previous_room
-                        return
 
         if gamecompleted == True or gameover == True:
             return
@@ -284,8 +290,8 @@ def execute_go(direction):
         print("You cannot go there.")
 
     if health <= 0:
-            gameover = True
-            game_over()
+        gameover = True
+        game_over()
 
 
 def calculate_inventory_mass():
