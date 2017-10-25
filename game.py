@@ -65,10 +65,11 @@ def consume_item(item):
     elif item['is_substance']:
         add_ability(True)
         print("You ate the " + item['name']+ "\n")
-        add_health(item) 
         return True
     else:
-        return False
+        add_health(item)
+        print("You ate the " + item['name']+ "\n")
+        return True
 
 
 
