@@ -33,6 +33,20 @@ class TestGameCore(unittest.TestCase):
             print_room_items(rooms['North Road'])
         output = out.getvalue().strip()
         self.assertEqual(output, 'There are no items here!')
+        with captured_output() as (out, err):
+            print_room_items(rooms['Fridge'])
+        output = out.getvalue().strip()
+        self.assertEqual(output, 'There is a bottle of beer, shot of vodka here.')
+
+    def test_inventory_items(self):
+        with captured_output() as (out, err):
+            print_inventory_items([])
+        output = out.getvalue().strip()
+        self.assertEqual(output, 'You have no items.')
+        with captured_output() as (out, err):
+            print_inventory_items([item_beer, item_id, item_cheeseburger])
+        output = out.getvalue().strip()
+        self.assertEqual(output, 'You have bottle of beer, driving licence, cheese burger.')
  
 if __name__ == '__main__':
     unittest.main()
