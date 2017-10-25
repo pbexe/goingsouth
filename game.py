@@ -212,6 +212,7 @@ def execute_go(direction):
     global money
     global health
     global gamecompleted
+    global gameover
     
     if direction in current_room['exits']:
 
