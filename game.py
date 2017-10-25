@@ -230,8 +230,11 @@ def execute_go(direction):
                 current_room = previous_room
                 return
             else:
-                for item in inventory:
+                # a is the last item in the inventory
+                a = inventory[len(inventory)-1]['id']
 
+                for item in inventory:
+                    
                     if item['id'] == "id":
                         a = random.randint(0,len(probability)-1)
                         input("Press enter to hand over your ID...")
@@ -244,7 +247,7 @@ def execute_go(direction):
                         else:
                             print ("The bouncer does not approve your ID, fight him!")
                             current_room['person'] = battle(current_room['person'])
-                    elif item['id'] != "id" and len(inventory) <=1:
+                    elif item['id'] != "id" and item['id'] == a:
                         print("You don't have any form of ID on you.")
                         current_room = previous_room
                         return
