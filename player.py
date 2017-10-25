@@ -7,10 +7,8 @@ inventory = [item_beer, item_vodka]
 # Start game at the reception
 current_room = rooms["Your Room"]
 
-money = 10
+money = 15
 
 health = 100
-
-attack_speed = 25
 
 player_abilities = []

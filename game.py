@@ -499,11 +499,7 @@ def battle(character):
         input()
         clear_screen()
         return character
-    #checks if payers attack speed found in player.py is greater than or equal to character attack speed
-    if attack_speed >= character["attack speed"]:
-            print ("YOU ARE FIRST TO ATTACK")
-    else:
-            print("YOUR OPPONENT GOES FIRST")
+
     # Main battle loop
     while character['health'] > 0:
         print("========================")
@@ -575,22 +571,26 @@ def cheat_checker(code):
     if code == "dollar":
         money += 1000
         print("You have been given £1000 for this entering this code.")
+    elif code == "life":
+        health = 1000
+
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def restart_game():
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
+    restart = sys.executable
+    os.execl(restart, restart, * sys.argv)
 
 def helper(help_me):
 
     if help_me == "help":
         print("""
-you must travel through the rooms using the command "go <direction>",
+the objective of the game is to make it into Pryzm without dying. 
+You must travel through the rooms using the command "go <direction>",
 you must drink alcohol to gain abilities to be able to battle other people,
 moving around the map and being in battles reduces health, which can be restored by eating food.
-
+you must battle people in order to gain items so you make it to the club
 """)
 
 
