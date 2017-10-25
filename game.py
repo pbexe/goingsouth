@@ -210,13 +210,47 @@ def execute_go(direction):
     global current_room
     global money
     global health
-
-    move_cost = int(current_room['exits'][direction]['cost'])
+    global gamecompleted
     
     if direction in current_room['exits']:
+
+        move_cost = int(current_room['exits'][direction]['cost'])
+
+        previous_room = current_room
         current_room = rooms[current_room['exits'][direction]['name']]
-        if 'person' in current_room:
+        probability = [True,False,True,False,False,True,True,False]
+
+        if 'person' in current_room and current_room['name'] != "Pryzm":
             current_room['person'] = battle(current_room['person'])
+        elif current_room['name'] == "Pryzm":
+
+            if len(inventory) == 0:
+                print("You don't have any form of ID on you.")
+                current_room = previous_room
+                return
+            else:
+                for item in inventory:
+
+                    if item['id'] == "id":
+                        a = random.randint(0,len(probability)-1)
+                        input("Press enter to hand over your ID...")
+                        print("The bouncer is thinking...")
+                        if probability[a]:
+                            # You managed to get in
+                            print("You managed to trick the bouncer!")
+                            gamecompleted = True
+                            return
+                        else:
+                            print ("The bouncer does not approve your ID, fight him!")
+                            current_room['person'] = battle(current_room['person'])
+                    elif item['id'] != "id" and len(inventory) <=1:
+                        print("You don't have any form of ID on you.")
+                        current_room = previous_room
+                        return
+
+        if gamecompleted == True or gameover == True:
+            return
+
         if int(move_cost) == 10:
             print("This is a long way! You can either walk or take a taxi. Please choose an option:")
             print("1. Take a taxi for £{}".format(move_cost))
@@ -224,8 +258,11 @@ def execute_go(direction):
             while 1:
                 choice = input("> ")
                 if choice == "1":
-                    print("This taxi journey cost you £{}!".format(move_cost))
-                    money -= move_cost
+                    if money - move_cost < 0:
+                        print("You do not have enough money to do this")
+                    else:
+                        money -= move_cost
+                        print("This taxi journey cost you £{}!".format(move_cost))
                     break
                 elif choice == "2":
                     print("This walk took away {}hp!".format(move_cost))
@@ -440,6 +477,7 @@ def move(exits, direction):
 def battle(character):
     global health
     global gameover
+    global gamecompleted
     
     if character['health'] <= 0:
         return character
@@ -493,6 +531,8 @@ def battle(character):
             print("They did "+ str(enemy_attack['damage']) + " damage")
         else:
             print("You defeated " + character['name'] + "!!!")
+            if character['name'] == "Bouncer":
+                gamecompleted = True
             break
             # If you dead
         if health <= 0:
@@ -512,11 +552,13 @@ def battle(character):
 def game_over():
     if gameover == True:
         print_ascii("gameover.txt")
+        time.sleep(5)
         restart_game()
 
 def game_complete():
     if gamecompleted == True:
         print_ascii("gamecompleted.txt")
+        return
 
 def cheat_checker(code):
     global inventory
@@ -535,13 +577,16 @@ def restart_game():
 
 # This is the entry point of our program
 def main():
+    global gameover
+    global gamecompleted
+
     clear_screen()
     print("You are about to embark on your journey. Press enter to begin")
     cheat_code = input()
     cheat_checker(cheat_code)
     clear_screen()
     # Main game loop
-    while gameover == False or gamecompleted == False:
+    while gameover == False and gamecompleted == False:
         # Display game status (room description, inventory etc.)
         print_ascii(current_room["ascii_art"])
         print_room(current_room)
