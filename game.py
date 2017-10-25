@@ -63,13 +63,12 @@ def consume_item(item):
         print("You drank the " + item['name']+ "\n")
         return True
     elif item['is_substance']:
+        add_health(item)
         add_ability(True)
         print("You ate the " + item['name']+ "\n")
         return True
     else:
-        add_health(item)
-        print("You ate the " + item['name']+ "\n")
-        return True
+        return False
 
 
 
@@ -392,8 +391,7 @@ def execute_inspect(item_id):
     for index, item in enumerate(inventory):
         if item['id'] == item_id:
             found = True
-            print(item['description'])
-            del inventory[index]
+            print(item['description'] + "\n")
     if found == False:
         print("You do not have this item")
 

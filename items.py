@@ -117,7 +117,7 @@ item_chicken = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "cost" : 8.95,
 
@@ -134,7 +134,7 @@ item_mixed_grill = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "cost" : 10.95,
 
@@ -151,7 +151,7 @@ item_cheeseburger = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "cost" : 4.20,
 
@@ -168,7 +168,7 @@ item_sauce = {
 
     "is_alcohol": False,
 
-    "is_substance": False,
+    "is_substance": True,
 
     "cost" : 0.40,
 
