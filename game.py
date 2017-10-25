@@ -262,6 +262,8 @@ def execute_go(direction):
                 if choice == "1":
                     if money - move_cost < 0:
                         print("You do not have enough money to do this")
+                        current_room = previous_room
+                        break
                     else:
                         money -= move_cost
                         print("This taxi journey cost you £{}!".format(move_cost))
