@@ -23,6 +23,12 @@ def print_ascii(file_name):
     with open("./ascii/" + file_name) as f:
         print(f.read())
 
+def slow_type(statement, typing_speed):
+	for letter in statement:
+		sys.stdout.write(letter)
+		sys.stdout.flush()
+		time.sleep(random.random()*10.0/typing_speed)
+
 def add_health(item):
     """This function increments the players health if they consume food"""
 
@@ -588,28 +594,29 @@ def restart_game():
     restart = sys.executable
     os.execl(restart, restart, * sys.argv)
 
-def helper(help_me):
-
-    if help_me == "help":
-        print("""
-the objective of the game is to make it into Pryzm without dying. 
-You must travel through the rooms using the command "go <direction>",
-you must drink alcohol to gain abilities to be able to battle other people,
-moving around the map and being in battles reduces health, which can be restored by eating food.
-you must battle people in order to gain items so you make it to the club
-""")
-
-
 # This is the entry point of our program
 def main():
     global gameover
     global gamecompleted
 
     clear_screen()
-    print("You are about to embark on your journey. type help for information or Press enter to begin")
+    print("Welcome to GOING SOUTH")
+    print("")
+    slow_type("""
+The objective of the game is to make it into Pryzm without passing out. 
+You travel through the rooms, finding useful items along the way. 
+Drink alcohol to gain powerful abilities; These abilities will aid 
+in your battles with strong opponents throughout your blurry, drunk walk.
+Be careful, moving around the map, and fighting, will reduce your health.
+Fear not! A quick trip to Fattoush will regain your health. 
+Will you find all the items and make it to the club?""", 300)
+    print("")
+    print("")
+    print("Good Luck!")
+    print("")
+    print("You are about to embark on your journey! Press enter to begin")
     cheat_code = input()
     cheat_checker(cheat_code)
-    helper(cheat_code)
     clear_screen()
     # Main game loop
     while gameover == False and gamecompleted == False:

@@ -59,7 +59,7 @@ item_beer = {
 
     "name": "bottle of beer",
 
-    "description": "an ice cold refreshing Tesco everday value beer.",
+    "description": "an ice cold, refreshing Tesco everday value beer.",
 
     "is_alcohol": True,
 
@@ -77,7 +77,7 @@ item_vodka = {
 
     "name": "shot of vodka",
 
-    "description": "a slightly warm and suspicious shot of vodka.",
+    "description": "a slightly warm, and suspicious shot of vodka.",
 
     "is_alcohol": True,
 
@@ -95,7 +95,7 @@ item_shoes = {
 
     "name": "a pair of shoes",
 
-    "description": "a pair of shoes that reek, but you'll need them to get into the club.",
+    "description": "a pair of shoes that reek, but you'll need them to get into the club!",
 
     "is_alcohol": False,
 
