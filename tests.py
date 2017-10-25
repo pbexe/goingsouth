@@ -61,5 +61,24 @@ class TestGameCore(unittest.TestCase):
             print_exit("south", "Uni Halls")
         output = out.getvalue().strip()
         self.assertEqual(output, 'GO SOUTH to Uni Halls.')
+
+    def test_menu(self):
+        with captured_output() as (out, err):
+            print_menu(rooms['Fridge']['exits'], rooms['Fridge']['items'], [item_beer, item_mixed_grill] )
+        output = out.getvalue().strip()
+        self.assertEqual(output, """You can carry an extra 2.2kg of items.
+
+You can:
+GO WEST to Uni Halls.
+TAKE BEER to take bottle of beer.
+TAKE VODKA to take shot of vodka.
+TAKE CHEESE to take a block of cheese.
+DROP/INSPECT BEER to drop your bottle of beer.
+DROP/INSPECT MIXEDGRILL to drop your mixed grill.
+DRINK BEER to drink your bottle of beer.
+EAT MIXEDGRILL to eat your mixed grill.
+What do you want to do?""")
+
+    
 if __name__ == '__main__':
     unittest.main()
