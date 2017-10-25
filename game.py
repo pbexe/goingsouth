@@ -572,6 +572,9 @@ def cheat_checker(code):
     if code == "dollar":
         money += 1000
         print("You have been given £1000 for this entering this code.")
+    elif code == "life":
+        health = 1000
+
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')

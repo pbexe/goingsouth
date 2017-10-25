@@ -143,7 +143,7 @@ item_ham = {
 
     "cost": ""
 }
-    
+
 #Fattoushian Cusine
 item_chicken = {
     "id": "chicken",
@@ -161,8 +161,6 @@ item_chicken = {
     "mass" : 1,
 
     "feed_value" : 20,
-
-    "cost": 5
 }
 item_mixed_grill = {
     "id": "mixedgrill",
