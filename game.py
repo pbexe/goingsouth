@@ -65,10 +65,11 @@ def consume_item(item):
     elif item['is_substance']:
         add_ability(True)
         print("You ate the " + item['name']+ "\n")
-        add_health(item) 
         return True
     else:
-        return False
+        add_health(item)
+        print("You ate the " + item['name']+ "\n")
+        return True
 
 
 
@@ -178,7 +179,7 @@ def print_menu(exits, room_items, inv_items):
 
     for item in room_items:
         if item["cost"] != "":
-            print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + str(item['cost']) +" .")
+            print("BUY " + item['id'].upper() + " to by the " + item['name'] + " for £" + (str(item['cost']) if str(item['cost'])[-1:] == "5" else (str(item['cost'])+"0")) +".")
         else:
             print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
@@ -276,6 +277,10 @@ def execute_go(direction):
             
     else:
         print("You cannot go there.")
+
+    if health <= 0:
+            gameover = True
+            game_over()
 
 
 def calculate_inventory_mass():
