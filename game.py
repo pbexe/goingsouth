@@ -603,7 +603,7 @@ Drink alcohol to gain powerful abilities; These abilities will aid
 in your battles with strong opponents throughout your blurry, drunk walk.
 Be careful, moving around the map, and fighting, will reduce your health.
 Fear not! A quick trip to Fattoush will regain your health. 
-Will you find all the items so you make it to the club?""", 300)
+Will you find all the items and make it to the club?""", 300)
     print("")
     print("")
     print("Good Luck!")
