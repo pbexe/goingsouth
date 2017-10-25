@@ -580,6 +580,16 @@ def restart_game():
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
+def helper(help_me):
+
+    if help_me == "help":
+        print("""
+you must travel through the rooms using the command "go <direction>",
+you must drink alcohol to gain abilities to be able to battle other people,
+moving around the map and being in battles reduces health, which can be restored by eating food.
+
+""")
+
 
 # This is the entry point of our program
 def main():
@@ -587,9 +597,10 @@ def main():
     global gamecompleted
 
     clear_screen()
-    print("You are about to embark on your journey. Press enter to begin")
+    print("You are about to embark on your journey. type help for information or Press enter to begin")
     cheat_code = input()
     cheat_checker(cheat_code)
+    helper(cheat_code)
     clear_screen()
     # Main game loop
     while gameover == False and gamecompleted == False:
