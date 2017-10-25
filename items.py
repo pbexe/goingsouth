@@ -117,7 +117,7 @@ item_chicken = {
 
     "is_alcohol": False,
 
-    "is_substance": True,
+    "is_substance": False,
 
     "cost" : 8.95,
 
