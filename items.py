@@ -107,6 +107,43 @@ item_shoes = {
 
     "cost" : ""
 }
+
+item_cheese = {
+    "id": "cheese",
+
+    "name": "a block of cheese",
+
+    "description": "mature cheddar cheese, probably more mature as its past it's date",
+
+    "is_alcohol": False,
+
+    "is_substance": True,
+
+    "mass": 0.4,
+
+    "feed_value": 20,
+
+    "cost": ""
+}
+
+item_ham = {
+    "id": "ham",
+
+    "name": "a slice of ham",
+
+    "description": "It's just ham.",
+
+    "is_alcohol": False,
+
+    "is_substance": True,
+
+    "mass": 0.2,
+
+    "feed_value": 15,
+
+    "cost": ""
+}
+
 #Fattoushian Cusine
 item_chicken = {
     "id": "chicken",
@@ -123,7 +160,7 @@ item_chicken = {
 
     "mass" : 1,
 
-    "feed_value" : 20
+    "feed_value" : 20,
 }
 item_mixed_grill = {
     "id": "mixedgrill",

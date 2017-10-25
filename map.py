@@ -35,7 +35,7 @@ room_fridge = {
 
     "exits": {"west": {"name": "Uni Halls", "cost": "1"}},
 
-    "items": [item_beer, item_vodka],
+    "items": [item_beer, item_vodka, item_cheese],
 
     "character": [],
 
@@ -64,7 +64,7 @@ room_friendsroom = {
 
     "exits": {"east": {"name": "Uni Halls", "cost": "2"}},
 
-    "items": [item_money],
+    "items": [item_money, item_beer],
 
     "person": characters['flat_mate'],
 
@@ -94,7 +94,7 @@ room_corridor = {
 
     "exits": {"east": {"name": "Pres", "cost": "2"}, "south": {"name": "Pres Host Room", "cost": "2"}},
 
-    "items": [],
+    "items": [item_ham],
 
     "person": characters['pres_host'],
 
@@ -165,15 +165,15 @@ room_parkplace = {
 room_cathayspark = {
     "name": "Cathays Park",
 
-    "description": "someone needs to add a description",
+    "description": "This is the main university campus and is eerily scary at night",
 
     "exits": {"east": {"name": "Park Place", "cost": "3"}},
 
-    "items": [],
+    "items": [item_sauce],
 
     "person": characters['homeless_man'],
 
-    "ascii_art": "cathayspark.txt"
+    "ascii_art": "need_ascii.txt"
 
 }
 
