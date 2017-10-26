@@ -188,7 +188,7 @@ def print_menu(exits, room_items, inv_items):
         else:
             print("TAKE " + item['id'].upper() + " to take " + item['name'] + ".")
     for item in inv_items:
-        print("DROP/INSPECT " + item['id'].upper() + " to drop your " + item['name'] + ".")
+        print("DROP/INSPECT " + item['id'].upper() + " to drop/inspect your " + item['name'] + ".")
     for item in inv_items:
         if item["is_substance"]:
             print("EAT " + item['id'].upper() + " to eat your " + item['name'] + ".")
@@ -623,7 +623,7 @@ Will you find all the items and make it to the club?""", 300)
         # Display game status (room description, inventory etc.)
         print_ascii(current_room["ascii_art"])
         print_room(current_room)
-        print("You currently have " +("no money" if money == 0 else ("£" + str(money)))+"\n")
+        print("You currently have " +("no money" if money == 0 else ("£" + str(round(money, 2))))+"\n")
         print_inventory_items(inventory)
 
         print("\n=======================")

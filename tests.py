@@ -73,8 +73,8 @@ GO WEST to Uni Halls.
 TAKE BEER to take bottle of beer.
 TAKE VODKA to take shot of vodka.
 TAKE CHEESE to take a block of cheese.
-DROP/INSPECT BEER to drop your bottle of beer.
-DROP/INSPECT MIXEDGRILL to drop your mixed grill.
+DROP/INSPECT BEER to drop/inspect your bottle of beer.
+DROP/INSPECT MIXEDGRILL to drop/inspect your mixed grill.
 DRINK BEER to drink your bottle of beer.
 EAT MIXEDGRILL to eat your mixed grill.
 What do you want to do?""")
